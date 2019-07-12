@@ -1,3 +1,51 @@
 [ 2019-07-12T10:52:56+08:00 ] 127.0.0.1 /xyhai.php?s=/Article/index/pid/11
 NOTIC: [8] unserialize(): Error at offset 0 of 130 bytes D:\Project\xyhcm\Include\Library\Think\Cache\Driver\File.class.php 第 104 行.
 
+[ 2019-07-12T11:28:53+08:00 ] 127.0.0.1 /xyhai.php?s=/Public/editorMethod&action=uploadimage
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\Project\xyh\Include\Library\Think\Upload.class.php 第 170 行.
+
+[ 2019-07-12T11:30:05+08:00 ] 127.0.0.1 /xyhai.php?s=/Public/editorMethod&action=uploadimage
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\Project\xyh\Include\Library\Think\Upload.class.php 第 170 行.
+
+[ 2019-07-12T11:30:45+08:00 ] 127.0.0.1 /xyhai.php?s=/Public/editorMethod&action=uploadimage
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\Project\xyh\Include\Library\Think\Upload.class.php 第 170 行.
+
+[ 2019-07-12T11:33:03+08:00 ] 127.0.0.1 /xyhai.php?s=/Public/editorMethod&action=uploadimage
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\Project\xyh\Include\Library\Think\Upload.class.php 第 170 行.
+
+[ 2019-07-12T11:33:31+08:00 ] 127.0.0.1 /xyhai.php?s=/Public/editorMethod&action=uploadimage
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\Project\xyh\Include\Library\Think\Upload.class.php 第 170 行.
+
+[ 2019-07-12T11:34:13+08:00 ] 127.0.0.1 /xyhai.php?s=/Public/editorMethod&action=uploadimage
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\Project\xyh\Include\Library\Think\Upload.class.php 第 170 行.
+
+[ 2019-07-12T11:34:34+08:00 ] 127.0.0.1 /xyhai.php?s=/Public/editorMethod&action=uploadimage
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\Project\xyh\Include\Library\Think\Upload.class.php 第 170 行.
+
+[ 2019-07-12T11:40:30+08:00 ] 127.0.0.1 /xyhai.php?s=/Public/editorMethod&action=uploadimage
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\Project\xyh\Include\Library\Think\Upload.class.php 第 170 行.
+
+[ 2019-07-12T11:40:47+08:00 ] 127.0.0.1 /xyhai.php?s=/Public/editorMethod&action=uploadimage
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\Project\xyh\Include\Library\Think\Upload.class.php 第 170 行.
+
+[ 2019-07-12T11:41:17+08:00 ] 127.0.0.1 /xyhai.php?s=/Public/editorMethod&action=uploadimage
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\Project\xyh\Include\Library\Think\Upload.class.php 第 170 行.
+
+[ 2019-07-12T11:43:05+08:00 ] 127.0.0.1 /xyhai.php?s=/Public/editorMethod&action=uploadimage
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\Project\xyh\Include\Library\Think\Upload.class.php 第 170 行.
+
+[ 2019-07-12T11:43:28+08:00 ] 127.0.0.1 /xyhai.php?s=/Public/editorMethod&action=uploadimage
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\Project\xyh\Include\Library\Think\Upload.class.php 第 170 行.
+
+[ 2019-07-12T11:43:53+08:00 ] 127.0.0.1 /xyhai.php?s=/Public/editorMethod&action=uploadimage
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\Project\xyh\Include\Library\Think\Upload.class.php 第 170 行.
+
+[ 2019-07-12T11:45:02+08:00 ] 127.0.0.1 /xyhai.php?s=/Public/editorMethod&action=uploadimage
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\Project\xyh\Include\Library\Think\Upload.class.php 第 170 行.
+
+[ 2019-07-12T11:45:23+08:00 ] 127.0.0.1 /xyhai.php?s=/Public/editorMethod&action=uploadimage
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\Project\xyh\Include\Library\Think\Upload.class.php 第 170 行.
+
+[ 2019-07-12T11:45:57+08:00 ] 127.0.0.1 /xyhai.php?s=/Public/editorMethod&action=uploadimage
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\Project\xyh\Include\Library\Think\Upload.class.php 第 170 行.
+
