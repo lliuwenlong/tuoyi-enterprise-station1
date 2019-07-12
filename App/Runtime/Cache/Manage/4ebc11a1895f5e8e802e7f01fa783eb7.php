@@ -7,34 +7,34 @@
 	<title>后台</title>
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
-	<link rel="stylesheet" type="text/css" href="/Data/static/bootstrap/3.3.5/css/bootstrap.min.css" media="screen">	
-	<link rel='stylesheet' type="text/css" href="/App/Manage/View/Public/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/cms222/Data/static/bootstrap/3.3.5/css/bootstrap.min.css" media="screen">	
+	<link rel='stylesheet' type="text/css" href="/cms222/App/Manage/View/Public/css/main.css" />
 	<!-- 头部css文件|自定义  -->
 	
 
-	<script type="text/javascript" src="/Data/static/js/jquery-1.11.3.min.js"></script>
-	<script type="text/javascript" src="/Data/static/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/cms222/Data/static/js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="/cms222/Data/static/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-		<script src="/Data/static/js/html5shiv.min.js"></script>
-		<script src="/Data/static/js/respond.min.js"></script>
+		<script src="/cms222/Data/static/js/html5shiv.min.js"></script>
+		<script src="/cms222/Data/static/js/respond.min.js"></script>
     <![endif]-->
 	
-	<script type="text/javascript" src="/App/Manage/View/Public/js/jquery.form.min.js"></script>
-	<script type="text/javascript" src="/Data/static/jq_plugins/layer/layer.js"></script>
+	<script type="text/javascript" src="/cms222/App/Manage/View/Public/js/jquery.form.min.js"></script>
+	<script type="text/javascript" src="/cms222/Data/static/jq_plugins/layer/layer.js"></script>
 	<script language="JavaScript">
 	    <!--
-	    var URL = '/xyhai.php?s=/Abc';
-	    var APP	 = '/xyhai.php?s=';
-	    var SELF='/xyhai.php?s=/Abc/index';
-	    var PUBLIC='/App/Manage/View/Public';
-	    var data_path = "/Data";
-		var tpl_public = "/App/Manage/View/Public";
+	    var URL = '/cms222/xyhai.php?s=/Abc';
+	    var APP	 = '/cms222/xyhai.php?s=';
+	    var SELF='/cms222/xyhai.php?s=/Abc/index';
+	    var PUBLIC='/cms222/App/Manage/View/Public';
+	    var data_path = "/cms222/Data";
+		var tpl_public = "/cms222/App/Manage/View/Public";
 	    //-->
 	</script>
-	<script type="text/javascript" src="/App/Manage/View/Public/js/common.js"></script> 
+	<script type="text/javascript" src="/cms222/App/Manage/View/Public/js/common.js"></script> 
 	<!-- 头部js文件|自定义 -->
 	
     <script type="text/javascript">

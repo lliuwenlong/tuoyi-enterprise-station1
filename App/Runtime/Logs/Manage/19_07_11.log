@@ -1,3 +1,0 @@
-[ 2019-07-11T19:01:06+08:00 ] 127.0.0.1 /xyhai.php?s=/Public/editorMethod&action=uploadimage
-NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\Project\xyhcm\Include\Library\Think\Upload.class.php 第 170 行.
-

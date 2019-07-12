@@ -6,17 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 <title>后台管理</title>
-<script type="text/javascript" src="/Data/static/js/jquery-1.11.3.min.js"></script>
-<script src="/App/Manage/View/Public/js/frame.js?v20180501" language="javascript" type="text/javascript"></script>
-<script type="text/javascript" src="/Data/static/jq_plugins/layer/layer.js"></script>
-<link href="/App/Manage/View/Public/css/frame.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/cms222/Data/static/js/jquery-1.11.3.min.js"></script>
+<script src="/cms222/App/Manage/View/Public/js/frame.js?v20180501" language="javascript" type="text/javascript"></script>
+<script type="text/javascript" src="/cms222/Data/static/jq_plugins/layer/layer.js"></script>
+<link href="/cms222/App/Manage/View/Public/css/frame.css" rel="stylesheet" type="text/css" />
 
 </head>
 <body class="showmenu" data-get-url="<?php echo U('Public/checkState');?>">
 <div class="pagemask"></div>
 <iframe class="iframemask"></iframe>
 <div class="head">
-<div class="top_logo"> <img src="/App/Manage/View/Public/images/main/logo.png" /> </div>
+<div class="top_logo"> <img src="/cms222/App/Manage/View/Public/images/main/logo.png" /> </div>
      <div class="nav" id="nav">
       <ul>
       	<?php if(is_array($menu)): foreach($menu as $k=>$v): ?><li id="menu_<?php echo ($k); ?>"><a <?php if(empty($k)): ?>class="thisclass"<?php endif; ?> href="#" _for="left_menu_<?php echo ($k); ?>"><b><?php echo ($v["name"]); ?></b></a></li><?php endforeach; endif; ?>
