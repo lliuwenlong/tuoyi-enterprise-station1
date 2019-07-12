@@ -1,0 +1,111 @@
+<extend name="Public:base" />
+<block name="header_js">
+<script type="text/javascript" src="__PUBLIC__/js/calendar.config.js"></script>
+<script type="text/javascript" src="__DATA__/editor/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="__DATA__/editor/ueditor/ueditor.all.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    var ue = UE.getEditor('inputReply',{
+        serverUrl :"{:U('Public/editorMethod')}"
+    });
+})
+</script>
+
+</block>
+
+<block name="content">
+	<div class="row">
+		<div class="col-lg-12">
+			<h3 class="page-header"><em class="glyphicon glyphicon-cloud-upload"></em> 
+			回复留言
+		    </h3>
+		</div>
+		
+	</div>
+
+
+	<div class="row">
+		<div class="col-lg-12">
+
+				<form method='post' class="form-horizontal" id="form_do" name="form_do" action="{:U('reply')}">	
+					<div class="form-group">
+						<label for="inputName" class="col-sm-2 control-label">姓名</label>
+						<div class="col-sm-9">
+							<p class="form-control-static">{$vo.username}</p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputUsername" class="col-sm-2 control-label">电话</label>
+						<div class="col-sm-9">
+							<p class="form-control-static">{$vo.tel}</p>					
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputEname" class="col-sm-2 control-label">Email</label>
+						<div class="col-sm-9">
+							<p class="form-control-static">{$vo.email}</p>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="inputEname" class="col-sm-2 control-label">QQ</label>
+						<div class="col-sm-9">
+							<p class="form-control-static">{$vo.qq}</p>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="inputRemark" class="col-sm-2 control-label">留言</label>
+						<div class="col-sm-9">
+							<p class="form-control-static">{$vo.content}</p>														
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="col-sm-2 control-label">审核</label>
+						<div class="col-sm-9">
+							<select name="status" class="form-control">
+								<option value="0" <if condition="$vo['status'] eq 0">selected="selected"</if>>未审核</option>
+								<option value="1" <if condition="$vo['status'] eq 1">selected="selected"</if>>已审核</option>
+							</select>
+						</div>
+					</div>	
+
+					<div class="form-group">
+						<label for="" class="col-sm-2 control-label">悄悄话</label>
+						<div class="col-sm-9">
+							<select name="private_flag" class="form-control">
+								<option value="0" <if condition="$vo['private_flag'] eq 0">selected="selected"</if>>否</option>
+								<option value="1" <if condition="$vo['private_flag'] eq 1">selected="selected"</if>>是</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputReply" class="col-sm-2 control-label">回复</label>
+						<div class="col-sm-9">
+							<textarea name="reply" id="inputReply" style="height:200px;">{$vo.reply}</textarea>
+							<p>支持html。</p>		
+						</div>
+					</div>
+
+					<div class="row margin-botton-large">
+						<div class="col-sm-offset-2 col-sm-9">
+							<input type="hidden" name="id" value="{$vo.id}" />	
+							<div class="btn-group">							
+								<button type="submit" class="btn btn-primary"> <i class="glyphicon glyphicon-saved"></i>
+									保存
+								</button>
+								<button type="button" onclick="goUrl('{:U('index')}')" class="btn btn-default"> <i class="glyphicon glyphicon-chevron-left"></i>
+									返回
+								</button>
+							</div>
+						</div>
+					</div>
+				</form>
+	
+		</div>
+	</div>
+
+		
+
+
+</block>

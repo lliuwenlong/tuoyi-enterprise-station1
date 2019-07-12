@@ -1,0 +1,91 @@
+<extend name="Public:base" />
+<block name="header_js">
+<script type="text/javascript">
+	$(function(){
+
+		
+
+		$("#form_do").submit(function(){
+			var name = $("input[name='name']");
+			if($.trim(name.val())==''){
+				layer.tips('名称不能为空', "input[name='name']", {
+				  tips: [3, '#78BA32']
+				});
+				return false;			
+			}else {
+			}
+
+		});
+
+    });
+</script>
+	
+</block>
+
+<block name="content">
+	<div class="row">
+		<div class="col-lg-12">
+			<h3 class="page-header"><em class="glyphicon glyphicon-cloud-upload"></em> 
+			{$meta_title}    
+		    </h3>
+		</div>
+		
+	</div>
+
+
+	<div class="row">
+		<div class="col-lg-12">			
+
+			<form method='post' class="form-horizontal" id="form_do" name="form_do" action="{:U('add')}">
+				<div class="form-group">
+							<label for="inputProName" class="col-sm-2 control-label">所属部门</label>
+							<div class="col-sm-9">
+								<select class="form-control" name="pid" id="inputPid">
+		                            <option value="0">顶级部门</option>
+		                            <volist name="vlistDepartment" id="vo">
+		                            	<option value="{$vo.id}"<if condition="$pid eq $vo['id']"> selected="selected"</if>>{$vo.delimiter}{$vo.name}</option>
+		                            </volist>
+		                        </select>									
+							</div>
+						</div>
+					
+
+						<div class="form-group">
+							<label for="inputName" class="col-sm-2 control-label">部门名称</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" name="name" id="inputName" placeholder="部门名称" required="required" />										
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputDescription" class="col-sm-2 control-label">描述</label>
+							<div class="col-sm-9">
+								<textarea name="description" id="inputDescription" class="form-control" placeholder="描述"></textarea>							
+							</div>
+						</div>								
+						<div class="form-group">
+							 <label for="inputDescription" class="col-sm-2 control-label">排序</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" name="sorting" id="inputSorting" placeholder="排序" value="0" required="required" />
+							</div>
+						</div>						
+						<div class="row">
+							<div class="col-sm-offset-2 col-sm-9">
+								<div class="btn-group">
+									<button type="submit" class="btn btn-primary"> <i class="glyphicon glyphicon-saved"></i>
+										保存
+									</button>
+									<button type="button" onclick="goUrl('{:U('index')}')" class="btn btn-default"> <i class="glyphicon glyphicon-chevron-left"></i>
+										返回
+									</button>
+								</div>
+							</div>
+						</div>
+			</form>
+	
+		</div>
+	</div>
+
+		
+
+
+</block>

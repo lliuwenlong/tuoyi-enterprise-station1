@@ -1,0 +1,67 @@
+<extend name="Public:base" />
+
+<block name="content">
+    <div class="row">
+        <div class="col-lg-12">
+            <h3 class="page-header"><em class="glyphicon glyphicon-cloud-upload"></em> 
+            栏目列表         
+            </h3>
+        </div>        
+    </div>
+
+    <div class="row margin-botton">
+        <div class="col-md-6 column">
+            <div class="btn-group btn-group-md">
+                 <button class="btn btn-primary" type="button" onclick="goUrl('{:U('Category/add')}')"><em class="glyphicon glyphicon-plus-sign"></em> 添加栏目</button>
+                 <button class="btn btn-default" type="button" onclick="doGoSubmit('{:U('Category/sort')}','form_do')"><em class="glyphicon glyphicon-th-list"></em> 更新排序</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <form action="{:U('Category/sort')}" method="post" id="form_do" name="form_do">
+                <div class="table-responsive">
+                    <table class="table table-hover xyh-table-bordered-out">
+                        <thead>
+                            <tr class="active">
+                                <th>编号</th>
+                                <th>名称</th>
+                                <th>所属模型</th>
+                                <th>显示</th>
+                                <th>排序</th>
+                                <th class="text-right">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <foreach name='cate' item='v'>
+                            <tr>
+                                <td>{$v.id}</td>
+                                <td class="aleft">{$v.delimiter}<if condition="$v['pid'] neq 0">├─</if><a href="<if condition='$v.type eq 0'>{:U(''.ucfirst($v['table_name']). '/index', array('pid' => $v['id']))}<else/>{:U('Category/edit',array('id' => $v['id']))}</if>">{$v.name}</a></td>
+                                <td ><if condition='$v.type eq 1'><span style="color:red">外部链接</span><else/>{$v.model_name}</if></td>
+                                <td>
+                                <switch name="v['status']">
+                                    <case value="1"><span class="label label-success">显示</span></case>
+                                    <case value="4"><span class="label label-danger">禁止</span></case>
+                                    <default /><span class="label label-default">隐藏</span>
+                                </switch></td>
+                                <td><input type="text" name="sortlist[{$v.id}]" value="{$v.sort}" id="sortlist" size="5" class="xyh-form-control" /></td>
+                                <td class="text-right">
+
+                                <a href="{:U('Category/add',array('pid' => $v['id']))}" class="label label-primary">添加子栏目</a>
+                                <a href="{:U(''.ucfirst($v['table_name']). '/index', array('pid' => $v['id']))}" class="label label-info">列表</a>
+                                <a href="{:U('Category/edit',array('id' => $v['id']))}" class="label label-success">修改</a>
+                                <a href="javascript:;" onclick="toConfirm('{:U('Category/del', array('id' => $v['id']))}', '确实要删除吗？')" class="label label-danger">删除</a>
+                                </td>
+                            </tr>
+                        </foreach>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+
+            
+        </div>
+    </div>
+
+</block>

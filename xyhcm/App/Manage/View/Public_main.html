@@ -1,0 +1,106 @@
+<extend name="Public:base" />
+
+<block name="content">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="panel panel-info">
+				<!-- Default panel contents -->		
+				<div class="panel-heading"><em class="glyphicon glyphicon-star"></em> 我的个人信息</div>
+				<div class="panel-body">
+					<p>
+						您好，{$Think.session.yang_adm_username}
+						<br/>		
+						上次登录时间：{$Think.session.yang_adm_login_time}
+						<br/>		
+						上次登录IP：{$Think.session.yang_adm_login_ip}
+						<br/>		
+					</p>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<!-- Default panel contents -->		
+				<div class="panel-heading">授权信息</div>
+				<div class="panel-body">
+					<p>
+						如果您已购买XYHCMS产品商业使用授权，您可以在我们的授权中心查询到相关商业授权信息，如果授权类型同查询不符，则说明您可能购买了非法商业授权，请及时同我们取得联系。
+我们的联系方式: QQ:307299635
+						<br/><br/>		
+						<a href="http://www.xyhcms.com/Authorization" target="_blank" class="btn btn-success "><em class="glyphicon glyphicon-zoom-in"></em>
+						商业授权查询</a>
+					</p>
+				</div>
+			</div>
+
+			<div class="panel panel-info">
+				<!-- Default panel contents -->		
+				<div class="panel-heading">系统信息</div>
+				<div class="panel-body">
+					XYHCMS程序版本：XYHCMS V{$cms_info.XYHCMS_VER} [{$cms_info.XYHCMS_TIME}] [<a href="{$cms_url}" target="_blank">查看最新版本</a>]<br />
+					操作系统：{$os} <br />
+					服务器软件：{$software}<br />
+					MySQL 版本：{$mysql_ver}<br />
+					上传文件：{$environment_upload}<br />	
+				</div>
+			</div>
+			
+			<div class="panel panel-default">
+				<!-- Default panel contents -->		
+				<div class="panel-heading">XYHCMS系统开发团队</div>
+				<div class="panel-body">
+					版权所有：<a href="{$cms_url}" target="_blank">行云海CMS</a><br />
+			官方网站：<a href="http://www.xyhcms.com" target="_blank">http://www.xyhcms.com</a><br />
+			官方论坛：<a href="http://www.xyhcms.com/Forum.html" target="_blank">http://www.xyhcms.com/Forum.html</a> <br />
+				</div>
+			</div>
+
+		</div>
+
+		<div class="col-md-6">
+			<div class="panel panel-warning">
+				<!-- Default panel contents -->		
+				<div class="panel-heading">XYHCMS安全提示</div>
+				<div class="panel-body">
+					<p>
+						1.取消uploads目录的执行权限！
+						<br/>		
+						2.更改后台入口文件 xyhai.php文件名；
+						<br/>		
+					</p>
+				</div>
+			</div>
+
+			<div class="panel panel-success">
+				<!-- Default panel contents -->		
+				<div class="panel-heading">XYHCMS更新消息</div>
+				<div class="panel-body">
+					<p>
+						<strong>当前版本：</strong>V{$cms_info.XYHCMS_VER} [{$cms_info.XYHCMS_TIME}]<br/>
+						<strong>最新版本：</strong><span id="XYHCMS_LastInfo"></span>	
+					</p>
+				</div>
+			</div>
+
+			<div class="panel panel-info">
+				<!-- Default panel contents -->		
+				<div class="panel-heading">行云海赞助商</div>
+				<div class="panel-body"  id="XYHCMS_News">
+					<p>
+						<strong>当前版本：</strong>V{$cms_info.XYHCMS_VER} [{$cms_info.XYHCMS_TIME}]<br/>
+						<strong>最新版本：</strong><span id="XYHCMS_LastInfo"></span>	
+					</p>
+				</div>
+			</div>
+
+
+		</div>
+
+
+	</div>
+
+
+
+</block>
+<block name="out_foot">
+	<script type="text/javascript" src="http://www.xyhcms.com/api.php?c=Cms&a=updatecheck&version={$cms_info.XYHCMS_VER}&release={$cms_info.XYHCMS_TIME}&os={$os}&php={$phpversion}&mysql={$mysql_ver}&software={$software}&lang={:C('DEFAULT_LANG')}&sae={$saeflag}"></script>
+</block>
+

@@ -1,0 +1,31 @@
+.xupload-content, .xupload-row {margin:5px;}
+.xupload-tip{line-height:22px; margin:10px 0; padding:0px 5px; font-size:12px;background-color: #b1ebb1;}
+.xupload-picture-item{width:130px; height:130px; border: 1px solid #cccccc; border-radius: 3px; padding: 5px; margin:2px; float: left; position: relative; overflow: hidden; }
+.xupload-picture-item p{word-wrap:break-word }
+.xupload-picture-item img{position: relative; max-width: 100%; z-index: 1;}
+.xupload-picture-item .xupload-picture-del{width:40px; height: 20px; text-align: center; font-size: 12px; color:#ffffff; cursor:pointer;  background-color: #ff6600; position:absolute; z-index: 2; right: 5px; top: 50%;display: none;}
+.xupload-picture-item .xupload-picture-go{width:40px; height: 20px;text-align: center; font-size: 12px; cursor:pointer; color:#ffffff; background-color: #0f92d6; position:absolute; z-index: 2; left: 5px; top: 50%; display: none;}
+.xupload-picture-item .xupload-picture-alt{height: 25px; font-size: 12px; background-color: #fff; position:absolute; z-index: 2; left: 5px; right: 5px; bottom: 5px; border: 1px solid #ccc; opacity: 0.7; overflow-y: hidden;}
+.xupload-picture-item .xupload-picture-alt input{ padding:0; margin:0;border: none;width: 100%; line-height: 25px;}
+
+.xupload-add-link-box {
+
+}
+.xupload-add-link-box .xupload-form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}

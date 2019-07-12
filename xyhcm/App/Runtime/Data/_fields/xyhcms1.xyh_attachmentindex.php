@@ -1,0 +1,1 @@
+a:5:{i:0;s:6:"att_id";i:1;s:6:"arc_id";i:2;s:8:"model_id";i:3;s:4:"desc";s:5:"_type";a:4:{s:6:"att_id";s:16:"int(10) unsigned";s:6:"arc_id";s:16:"int(10) unsigned";s:8:"model_id";s:16:"int(10) unsigned";s:4:"desc";s:11:"varchar(20)";}}

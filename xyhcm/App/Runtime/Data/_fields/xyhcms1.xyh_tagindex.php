@@ -1,0 +1,1 @@
+a:6:{i:0;s:6:"tag_id";i:1;s:6:"arc_id";i:2;s:3:"cid";i:3;s:8:"model_id";s:3:"_pk";a:3:{i:0;s:6:"tag_id";i:1;s:6:"arc_id";i:2;s:3:"cid";}s:5:"_type";a:4:{s:6:"tag_id";s:16:"int(10) unsigned";s:6:"arc_id";s:16:"int(10) unsigned";s:3:"cid";s:16:"int(10) unsigned";s:8:"model_id";s:16:"int(10) unsigned";}}

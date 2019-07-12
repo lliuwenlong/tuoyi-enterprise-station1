@@ -1,0 +1,172 @@
+<extend name="Public:base" />
+
+<block name="content">
+    <div class="row">
+        <div class="col-lg-12">
+            <h3 class="page-header"><em class="glyphicon glyphicon-cloud-upload"></em> 
+            {$type}         
+            </h3>
+        </div>
+        
+    </div>
+
+    <if condition='ACTION_NAME eq "all"'>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="alert alert-info" role="alert">
+              <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+              <span class="sr-only">Note:</span>
+              <span>说明：</span> 一键更新全站静态缓存(Html)。
+            </div>
+        </div>
+    </div>
+
+    <div class="row margin-botton">
+        <div class="col-lg-12">
+            <form action="" method="post" id="form_do" name="form_do">
+            <div class="btn-group btn-group-md">
+                <button class="btn btn-success" type="button" onclick="doGoSubmit('{:U('ClearHtml/all')}', 'form_do')"><em class="glyphicon glyphicon-ok-sign"></em> 开始更新全站</button>
+                <button class="btn btn-default" type="button" onclick="goUrl('{:U('index')}', 'form_do')"><em class="glyphicon glyphicon-chevron-left"></em> 返回</button>
+            </div>
+            </form>
+        </div>
+    </div>    
+    </if>
+
+    <if condition='ACTION_NAME eq "home"'>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="alert alert-info" role="alert">
+              <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+              <span class="sr-only">Note:</span>
+              <span>说明：</span> 更新网站首页静态缓存(Html)。
+            </div>
+        </div>
+    </div>
+
+    <div class="row margin-botton">
+        <div class="col-lg-12">
+            <form action="" method="post" id="form_do" name="form_do">
+            <div class="btn-group btn-group-md">
+                <button class="btn btn-info" type="button" onclick="doGoSubmit('{:U('ClearHtml/home')}', 'form_do')"><em class="glyphicon glyphicon-ok-sign"></em> 开始更新首页</button>
+                <button class="btn btn-default" type="button" onclick="goUrl('{:U('index')}', 'form_do')"><em class="glyphicon glyphicon-chevron-left"></em> 返回</button>
+            </div>
+            </form>
+        </div>
+    </div>    
+    </if>
+
+    <if condition='ACTION_NAME eq "lists"'>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="alert alert-info" role="alert">
+              <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+              <span class="sr-only">Note:</span>
+              <span>说明：</span>更新栏目列表静态缓存(Html)。
+            </div>
+        </div>
+    </div>
+
+    <div class="row margin-botton">
+        <div class="col-lg-12">
+            <div class="btn-group btn-group-md">
+                <button class="btn btn-info" type="button" onclick="doGoBatch('{:U('ClearHtml/lists')}')"><em class="glyphicon glyphicon-ok-sign"></em> 更新选中的栏目</button>
+                <button class="btn btn-default" type="button" onclick="doGoSubmit('{:U('ClearHtml/lists', array('isall' => 1))}', 'form_do')"><em class="glyphicon glyphicon-ok-sign"></em> 一键更新所有栏目</button>
+                <button class="btn btn-default" type="button" onclick="goUrl('{:U('index')}', 'form_do')"><em class="glyphicon glyphicon-chevron-left"></em> 返回</button>
+            </div>
+        </div>
+    </div> 
+
+    <div class="row">
+        <div class="col-sm-12">
+            <form action="{:U('ClearHtml/lists')}" method="post" id="form_do" name="form_do">
+                <table class="table table-hover xyh-table-bordered-out">
+                    <tr>
+                        <th width="50"><input type="checkbox" id="check"></th>
+                        <th class="aleft">栏目</th>
+                    </tr>
+                    <foreach name='cate' item='v'>
+                    <tr>
+                        <td><input type="checkbox" name="key[]" value="{$v.id}"></td>
+                        <td class="aleft">{$v.delimiter}<if condition="$v['pid'] neq 0">├─</if>{$v.name}</td>
+                    </tr>
+                    </foreach>
+                </table>
+            </form> 
+        </div>
+    </div>
+
+    </if>
+
+    <if condition='ACTION_NAME eq "shows"'>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="alert alert-info" role="alert">
+              <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+              <span class="sr-only">Note:</span>
+              <span>说明：</span>更新文档(内容页)静态缓存(Html)。
+            </div>
+        </div>
+    </div>
+
+    <div class="row margin-botton">
+        <div class="col-lg-12">
+            <div class="btn-group btn-group-md">
+                <button class="btn btn-info" type="button" onclick="doGoBatch('{:U('ClearHtml/shows')}')"><em class="glyphicon glyphicon-ok-sign"></em> 更新选中的栏目下文档</button>
+                <button class="btn btn-default" type="button" onclick="doGoSubmit('{:U('ClearHtml/shows', array('isall' => 1))}', 'form_do')"><em class="glyphicon glyphicon-ok-sign"></em> 一键更新所有文档</button>
+                <button class="btn btn-default" type="button" onclick="goUrl('{:U('index')}', 'form_do')"><em class="glyphicon glyphicon-chevron-left"></em> 返回</button>
+            </div>
+        </div>
+    </div> 
+
+    <div class="row">
+        <div class="col-sm-12">
+            <form action="{:U('ClearHtml/shows')}" method="post" id="form_do" name="form_do">
+                <table class="table table-hover xyh-table-bordered-out">
+                    <tr>
+                        <th width="50"><input type="checkbox" id="check"></th>
+                        <th class="aleft">栏目</th>
+                    </tr>
+                    <foreach name='cate' item='v'>
+                    <tr>
+                        <td><input type="checkbox" name="key[]" value="{$v.id}" <if condition="$v.table_name eq 'page'">disabled="disabled"</if></td>
+                        <td class="aleft">{$v.delimiter}<if condition="$v['pid'] neq 0">├─</if>{$v.name}</td>
+                    </tr>
+                    </foreach>
+                </table>
+            </form> 
+        </div>
+    </div>
+    
+    </if>
+
+
+    <if condition='ACTION_NAME eq "special"'> 
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="alert alert-info" role="alert">
+              <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+              <span class="sr-only">Note:</span>
+              <span>说明：</span> 更新专题静态缓存(Html)。
+            </div>
+        </div>
+    </div>
+
+    <div class="row margin-botton">
+        <div class="col-lg-12">
+            <div class="btn-group btn-group-md">
+            <form action="" method="post" id="form_do" name="form_do">
+                <button class="btn btn-info" type="button" onclick="doGoSubmit('{:U('ClearHtml/special')}', 'form_do')"><em class="glyphicon glyphicon-ok-sign"></em> 更新专题列表</button>
+                <button class="btn btn-default" type="button" onclick="doGoSubmit('{:U('ClearHtml/special', array('isall' => 1))}', 'form_do')"><em class="glyphicon glyphicon-ok-sign"></em> 一键更新所有专题</button>
+                <button class="btn btn-default" type="button" onclick="goUrl('{:U('index')}', 'form_do')"><em class="glyphicon glyphicon-chevron-left"></em> 返回</button>
+            </form>
+            </div>
+        </div>
+    </div> 
+
+    
+    </if>
+
+
+
+</block>

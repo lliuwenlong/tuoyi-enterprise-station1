@@ -1,0 +1,53 @@
+<script type="text/javascript">
+$(function(){
+	var $chkurl = "{:U('Public/loginChk')}";
+	$.get($chkurl,function(data){
+		//alert(data);
+		if (data.status == 1) {
+			$('#top_login_ok').show();
+			$('#top_login_no').hide();
+			//$('#top_login_ok').find('span');
+			$('#top_login_ok>span').html('欢迎您，'+data.nickname);
+		}else {			
+			$('#top_login_ok').hide();
+			$('#top_login_no').show();
+		}
+	},'json');	
+});
+</script>
+<div class="warp" id="herd">
+	<div id="top_fla">
+	</div>
+	<div id="top_member">
+		<!--<a href="{:U(MODULE_NAME.'/Product/basket')}">购物车</a>-->
+		<div id="top_login_no">
+		<a href="{:U(MODULE_NAME.'/Public/register')}">会员注册</a>	
+		<a href="{:U(MODULE_NAME.'/Public/login')}">会员登录</a>	
+		<span>欢迎您，游客！您可以选择</span>	
+		</div>
+		<div id="top_login_ok" style="display:none;">
+		<a href="{:U(MODULE_NAME.'/Member/index')}">会员中心</a>	
+		<a href="{:U(MODULE_NAME.'/Public/logout')}">安全退出</a>
+		<span>欢迎您， </span>
+		</div>
+			
+	</div>
+	<div id="top_logo"><a href="<yang:siteurl />"></a></div>
+</div>
+<!--menu -->
+<div id="menu">
+	<ul>
+		<li><a href="<yang:siteurl />">首 页</a></li>
+		<yang:navlist typeid='0'>
+		<li><a href='{$navlist.url}'>{$navlist.name}</a>
+			<notempty name="navlist['child']">
+				<div class="sub-menu">
+					<volist name="navlist['child']" id="vo">
+						<a href='{$vo|get_url}'>{$vo.name}</a>
+					</volist>
+				</div>
+			</notempty>
+		</li>
+		</yang:navlist>
+	</ul>
+</div>

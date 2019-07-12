@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>{$title}-<yang:sitename /></title>
+<script type="text/javascript" src="__DATA__/static/js/jquery-1.12.4.min.js" ></script>
+<link href="__PUBLIC__/css/css.css?2017" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<!--top -->
+<div id="top">
+<include file="Public:header" />
+
+<div class="warp1 mt">
+	<include file="Public:announce" />
+</div>
+<div class="clear"></div>
+
+</div>
+
+<div class="content">
+	<div class="warp1 mt">
+
+<div class="left f_l">
+	<h3 class="flbt">热门标签</h3>
+	<div class="xbox">
+		<yang:taglist limit='10'>			
+			<a href="{$taglist.url}" class="tag-item">{$taglist.tag_name}</a>			
+		</yang:taglist>
+	</div>
+</div>
+<div class="right f_r">
+	<h3 class="nybt"><span>相关文档</span></h3>
+	<div class="xbox wzzw ">	
+	<div class="search_title">标签： <span class="red">{$tname}</span></div>
+	
+	<ul class="wzli">
+	<volist name='vlist' id="slist">
+	<li><span>{$slist.publish_time|get_date='Y-m-d'}</span><a href="{$slist.url}" target="_blank">[{$slist.cate_name}]{$slist.title}</a></li>
+	</volist>
+	
+	</ul>
+
+	<!--分页 -->
+	<div class="scott mt">{$page}
+	<div class="clear"></div>
+	</div>
+	
+	</div>
+	</div>
+<div class=" clear"></div>
+</div>
+</div>
+
+<include file="Public:footer" />
+</body>
+</html>

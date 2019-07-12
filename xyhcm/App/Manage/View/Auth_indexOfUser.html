@@ -1,0 +1,120 @@
+<extend name="Public:base" />
+
+<block name="content">
+    <div class="row">
+        <div class="col-lg-12">
+            <h3 class="page-header"><em class="glyphicon glyphicon-cloud-upload"></em> 
+            {$meta_title}        
+            </h3> 
+        </div>
+        
+    </div>
+
+    <div class="row margin-botton">
+        <div class="col-sm-6 column">
+            <div class="btn-group btn-group-md">           
+                <button class="btn btn-primary" type="button" onclick="goUrl('{:U('addUser')}')"><em class="glyphicon glyphicon-plus-sign"></em> 添加系统用户</button>
+            </div>
+        </div>
+        <div class="col-sm-6 text-right">
+            <form class="form-inline" method="post" action="{:U('indexOfUser')}">
+              <div class="form-group">
+                <label class="sr-only" for="inputKeyword">关键字</label>
+                <input type="text" class="form-control" name="keywords" id="inputKeywords" placeholder="用户名称" value="{$keywords}">
+              </div>                  
+              <div class="form-group">
+                <label class="sr-only" for="inputGroupId">部门</label>
+                <select class="form-control" name="department_id" id="inputDepartmentId">
+                    <option value="0">请选择部门</option>
+                    <volist name="vlistDepartment" id="vo">
+                    <option value="{$vo.id}" <if condition="$vo['id'] eq $department_id"> selected="selected"</if>>{$vo.name}</option>
+                    </volist>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-default">搜索</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <form action="" method="post" id="form_do" name="form_do">
+                <div class="">
+                    <table class="table table-hover xyh-table-bordered-out">
+                        <thead>
+                            <tr class="active">
+                                <tr>
+                                    <th>id</th>
+                                    <th>用户名</th>    
+                                    <th>姓名</th>                             
+                                    <th>邮箱</th>
+                                    <th>部门</th>
+                                    <th>职位</th>
+                                    <th>登录次数</th>
+                                    <th>IP</th>
+                                    <th>登录时间</th>
+                                    <th>状态</th>
+                                    <th class="text-right">操作</th>
+                                </tr>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <volist name="vlist" id="vo">  
+                            <tr>
+                                <td>{$vo.id}</td>
+                                <td>{$vo.username}</td>
+                                <td>{$vo.realname}</td>
+                                <td>{$vo.email}</td>
+                                <td class="td-department">
+                                    <volist name="vo['department_list']" id="vo2">
+                                        <span class="label label-success label-department">
+                                        {$vo2.name}
+                                        </span>&nbsp;
+                                    </volist>
+                                </td>
+                                <td class="td-department">
+                                    <volist name="vo['group']" id="vo2">
+                                        <span class="label label-success label-department">
+                                        {$vo2.title}
+                                        </span>&nbsp;
+                                    </volist>
+                                </td>
+                                <td>{$vo.login_num}</td>
+                                <td>{$vo.login_ip}</td>
+                                <td>{$vo.login_time}</td>
+                                <td>
+                                <switch name="vo['is_lock']" >
+                                    <case value="1"><span class="label label-default">锁定</span></case>
+                                    <case value="0"><span class="label label-success">正常</span></case>
+                                </switch>
+                                </td>
+                                <td class="text-right">
+                                <a href="{:U('updateStatusOfUser', array('id' => $vo['id'], 'is_lock' => $vo['is_lock']))}"  class="label label-info"><i class="icon-play-circle"> </i><if condition="$vo['is_lock'] eq 0">锁定<else />启用</if></a>
+                                <a href="{:U('editUser', array('id' => $vo['id']))}" class="label label-success"><i class="icon-edit"> </i>编辑</a>
+                                <if condition="$vo['user_type'] eq 9"> 
+                                <span class="label label-default">删除</span>   
+                                <else/>
+                                <a href="javascript:;" onclick="toConfirm('{:U('delUser',array('id' => $vo['id']), '')}', '确实要删除吗？')" class="label label-danger">删除</a>
+                                </if> 
+                                
+                                </td>
+                            </tr>
+                            </volist>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+
+            <div class="row clearfix">
+                <div class="col-md-12 column">
+                    <div class="xyh-page">
+                        {$page}
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+
+    </block>

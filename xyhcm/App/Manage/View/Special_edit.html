@@ -1,0 +1,201 @@
+<extend name="Public:base" />
+<block name="header_js">
+<script type="text/javascript" src="__PUBLIC__/js/calendar.config.js"></script>
+<script type="text/javascript" src="__DATA__/static/jq_plugins/iColorPicker/iColorPicker.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/XYHUploader/XYHUploader.js"></script>
+
+<script type="text/javascript">
+$(function () {
+	//缩略图上传
+	$('#litpic').XYHUploader({
+		sfile:"img1", 
+		furl:"{:U('Public/upload',array('img_flag' => 1))}", 
+		burl:"{:U('Public/browseFile', array('stype' => 'picture'))}",
+		thide: false,
+		thumflag: true
+	});
+
+	$('#CK_JumpUrl').click(function(){
+            if($(this).prop('checked')) {
+                $('#JumpUrlDiv').show();
+
+            }else {
+                $('#JumpUrlDiv').hide();
+            }
+            
+     });
+	
+});
+
+
+
+</script>
+	
+</block>
+
+<block name="content">
+	<div class="row">
+		<div class="col-lg-12">
+			<h3 class="page-header"><em class="glyphicon glyphicon-cloud-upload"></em> 
+			修改文章  
+		    </h3>
+		</div>
+		
+	</div>
+
+
+	<div class="row">
+		<div class="col-lg-12">
+
+				<form method='post' class="form-horizontal" id="form_do" name="form_do" action="{:U('edit')}">											
+
+					<div class="form-group">
+						<label for="inputTtitle" class="col-sm-2 control-label">标题</label>
+						<div class="col-sm-9">
+							<input type="text" name="title" id="inputTtitle" value="{$vo.title}" class="form-control" placeholder="标题" required="required" />									
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputShorttitle" class="col-sm-2 control-label">副标题</label>
+						<div class="col-sm-9">
+							<input type="text" name="short_title" id="inputShorttitle" value="{$vo.short_title}" class="form-control" placeholder="副标题" />									
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="inputColor" class="col-sm-2 control-label">标题颜色</label>
+						<div class="col-sm-5">
+							<input type="text" name="color" id="inputColor" value="{$vo.color}" class="form-control  iColorPicker" placeholder="标题颜色" />									
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="inputColor" class="col-sm-2 control-label">自定义属性</label>
+						<div class="col-sm-9">
+							<foreach name='flagtypelist' item='v'>
+							<label class="checkbox-inline"><input type='checkbox' name='flags[]' value='{$key}' <if condition="$key eq B_JUMP">id="CK_JumpUrl"</if> <if condition="($vo['flag'] & $key) eq $key">checked="checked"</if> /> {$v}</label>
+							</foreach>								
+						</div>
+					</div>
+
+					<div class="form-group" id="JumpUrlDiv" <if condition="($vo['flag'] & B_JUMP) eq 0">style="display:none;"</if>>
+						<label for="inputJumpurl" class="col-sm-2 control-label">跳转网址</label>
+						<div class="col-sm-9">
+							<input type="text" name="jump_url" id="inputJumpurl" value="{$vo.jump_url}" class="form-control" placeholder="跳转网址" />									
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="inputProName" class="col-sm-2 control-label">所属栏目</label>
+						<div class="col-sm-9">
+							<select name="cid" class="form-control">
+								<volist name="cate" id="v">
+								<option value="{$v.id}" <if condition="$vo['cid'] eq $v['id']">selected="selected"</if>>{$v.delimiter}{$v.name}</option>
+								</volist>
+							</select>									
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="litpic" class="col-sm-2 control-label">缩略图</label>
+						<div class="col-sm-9">
+							    <input type="text" class="form-control" name="litpic" id="litpic"   value="{$vo.litpic}" placeholder="缩略图地址" />	
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<label for="inputKeywords" class="col-sm-2 control-label">模板</label>
+						<div class="col-sm-9">
+							<select name="template" class="form-control">
+								<foreach name='styleShowList' item='v'>
+								<option value="{$v}" <if condition="$vo['template'] eq $v">selected="selected"</if>>{$v}</option>
+								</foreach>
+							</select>					
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="inputKeywords" class="col-sm-2 control-label">关键词</label>
+						<div class="col-sm-9">
+							<input type="text" name="keywords" id="inputKeywords" class="form-control" value="{$vo.keywords}" placeholder="多关键词之间用“,”隔开" />						
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="inputDescription" class="col-sm-2 control-label">专题说明</label>
+						<div class="col-sm-9">
+							<textarea name="description" id="inputDescription" class="form-control">{$vo.description}</textarea>								
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputFilename" class="col-sm-2 control-label">自定义文件名</label>
+						<div class="col-sm-9">
+							<input type="text" name="filename" id="inputFilename" value="{$vo.filename}" class="form-control" placeholder="文件名只能由字母、拼音、英文组成" />	
+							<div>文件名只能由字母、拼音、英文组成</div>					
+						</div>
+					</div>					
+
+					<div class="form-group">
+						<label for="inputPublishtime" class="col-sm-2 control-label">发布时间</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" name="publish_time" id="inputPublishtime" value="{$vo.publish_time}">
+			                <script type="text/javascript">
+			                    Calendar.setup({
+			                        weekNumbers: true,
+			                        inputField : "inputPublishtime",
+			                        trigger    : "inputPublishtime",
+			                        dateFormat: "%Y-%m-%d %H:%M:%S",
+			                        showTime: true,
+			                        minuteStep: 1,
+			                        onSelect   : function() {this.hide();}
+			                    });
+			                </script>						
+						</div>
+					</div>			
+
+					<div class="form-group">
+						<label for="inputShorttitle" class="col-sm-2 control-label">权重</label>
+						<div class="col-sm-2">
+							<input type="text" name="point" id="inputPoint" value="{$vo.point}" class="form-control" placeholder="权重" />	
+						</div>
+						<div class="col-sm-7">
+							<label class="checkbox-inline">权重用于排序，从大到小，排序优先</label>	
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<label for="inputName" class="col-sm-2 control-label">评论</label>
+						<div class="col-sm-9">
+							<label class="radio-inline">
+							 	<input type="radio" name="comment_flag" value="1" <if condition="$vo['comment_flag'] eq 1">checked="checked"</if> />允许				
+							 </label>
+							<label class="radio-inline">
+							 	<input type="radio" name="comment_flag" value="0"  <if condition="$vo['comment_flag'] eq 0">checked="checked"</if> />禁止		
+							 </label>	
+						</div>
+					</div>		
+					
+					<div class="row margin-botton-large">
+						<div class="col-sm-offset-2 col-sm-9">
+							<input type="hidden" name="id" value="{$vo.id}" />
+							<div class="btn-group">
+								<button type="submit" class="btn btn-primary"> <i class="glyphicon glyphicon-saved"></i>
+									保存
+								</button>
+								<button type="button" onclick="goUrl('{:U('index')}')" class="btn btn-default"> <i class="glyphicon glyphicon-chevron-left"></i>
+									返回
+								</button>
+							</div>
+						</div>
+					</div>
+				</form>
+	
+		</div>
+	</div>
+
+		
+
+
+</block>

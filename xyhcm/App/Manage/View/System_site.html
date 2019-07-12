@@ -1,0 +1,122 @@
+<extend name="Public:base" />
+<block name="header_js">
+	<script type="text/javascript" src="__PUBLIC__/js/XYHUploader/XYHUploader.js"></script>
+	
+</block>
+
+<block name="content">
+	<div class="row">
+		<div class="col-lg-12">
+			<h3 class="page-header"><em class="glyphicon glyphicon-cloud-upload"></em> 
+			网站设置   
+		    </h3>
+		</div>
+		
+	</div>
+	<div class="row margin-botton">
+        <div class="col-md-12 text-right">
+            <div class="btn-group btn-group-md">
+                 <button class="btn btn-default" type="button" onclick="goUrl('{:U('index')}')"><em class="glyphicon glyphicon-th-list"></em> 配置项管理</button>
+            </div>
+        </div>
+    </div>
+
+
+	<div class="row">
+		<div class="col-lg-12">
+			<div>
+			
+				<!-- Nav tabs -->			
+				<ul class="nav nav-tabs" role="tablist">
+					<foreach name='configgroup' item='v'>
+					<li role="presentation" <if condition="$key eq 1">class="active"</if>>
+						<a href="#tabConent{$key}" aria-controls="tabConent{$key}" role="tab" data-toggle="tab">{$v}</a>
+					</li>
+					</foreach>
+				</ul>
+
+				<form method='post' class="form-horizontal" id="form_do" name="form_do" action="{:U('site')}">
+					<!-- Tab panes -->			
+					<div class="tab-content" style="margin-top:20px;">
+						<foreach name='vlist' item='v'>
+						<div role="tabpanel" <if condition="$key eq 1">class="tab-pane active"<else/>class="tab-pane"</if> id="tabConent{$key}">
+							<volist name="v" id="config">							
+		                    <div class="form-group">
+								 <label for="input_{$config.name}" class="col-sm-2 control-label">{$config.title}</label>
+								<div class="col-sm-8">
+									<switch name="config['t_value']|parse_config_attr">
+									<case value="text">
+									<input type="text" class="form-control" name="config[{$config.name}]" value="{$config.s_value}" placeholder="{$config.remark}">
+									</case>
+									<case value="radio">
+										<volist name=":parse_config_attr($config['t_value'], 0)" id="vo">
+											<label class="radio-inline">
+	                                            <input type="radio" name="config[{$config.name}]" value="{$key}" <if condition="$config['s_value'] eq $key"> checked="checked"</if> /> {$vo}
+	                                        </label>
+										</volist>
+									</case>
+									<case value="checkbox">
+										<volist name=":parse_config_attr($config['t_value'], 0)" id="vo">
+											<label class="checkbox-inline">
+											    <input type="checkbox" name="config[{$config.name}]" value="{$key}" <if condition="$config['s_value'] eq $key"> checked="checked"</if>>{$vo}
+											</label>
+										</volist>
+									</case>
+									<case value="select">
+									<select name="config[{$config.name}]" class="form-control">
+										<volist name=":parse_config_attr($config['t_value'], 0)" id="vo">
+											<option value="{$key}" <if condition="$config['s_value'] eq $key">selected="selected"</if>>{$vo}</option>
+										</volist>
+									</select>
+									</case>
+									<case value="textarea">				
+									<textarea name="config[{$config.name}]" class="form-control" rows="5" placeholder="{$config.remark}">{$config.s_value}</textarea>
+									</case>									
+									<case value="file@ad">
+										<input type="text" class="form-control" name="config[{$config.name}]" data-name="{$config.name}"  value="{$config.s_value}" placeholder="{$config.remark}">	
+										<script type="text/javascript">
+											$(function(){
+												$('input[data-name={$config.name}').XYHUploader({
+													sfile:"abc1", 
+													btnName: "水印图片",
+													furl:"{:U('Public/upload')}", 
+													burl:"{:U('Public/browseFile', array('stype' => 'ad'))}",
+													show: true,
+													thide: true,
+													thumflag: false
+												});
+
+											});
+										</script>
+
+									</case>
+									</switch>
+
+								</div>
+								<div class="col-sm-2"><span class="icon-question-sign" data-toggle="tooltip" data-placement="left" title="{$config.remark}"></span></div>
+							</div>
+							</volist>						
+						</div>
+						</foreach>
+
+					</div>
+					<div class="row">
+						<div class="col-sm-offset-2 col-sm-9">
+							<div class="btn-group">
+								<button type="submit" class="btn btn-primary"> <i class="glyphicon glyphicon-saved"></i>
+									保存
+								</button>
+							</div>
+						</div>
+					</div>
+				</form>
+
+			</div>
+	
+		</div>
+	</div>
+
+		
+
+
+</block>

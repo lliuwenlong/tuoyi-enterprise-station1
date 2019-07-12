@@ -1,0 +1,97 @@
+<extend name="Public:base" />
+<block name="content">
+	<div class="row">
+		<div class="col-lg-12">
+			<h3 class="page-header"><em class="glyphicon glyphicon-cloud-upload"></em> 
+			修改内容模型
+		    </h3>
+		</div>
+		
+	</div>
+
+
+	<div class="row">
+		<div class="col-lg-12">
+
+				<form method='post' class="form-horizontal" id="form_do" name="form_do" action="{:U('edit')}">
+					<div class="form-group">
+						<label for="inputName" class="col-sm-2 control-label">模型名称</label>
+						<div class="col-sm-9">
+							<input type="text" name="name" id="inputName" value="{$vo.name}" class="form-control" placeholder="模型名称" required="required" />		
+						</div>
+					</div>	
+					<div class="form-group">
+						<label for="inputTablename" class="col-sm-2 control-label">附加表</label>
+						<div class="col-sm-9">
+							<input type="text" name="table_name" id="inputTablename" value="{$vo.table_name}" class="form-control" placeholder="表名小写，去掉默认表前缀" required="required" />
+							<p class="form-control-static">表名小写，去掉默认表前缀</p>	
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputTablename" class="col-sm-2 control-label">列表模板</label>
+						<div class="col-sm-9">
+							<select name="template_list" class="form-control">
+								<foreach name='styleListList' item='v'>
+								<option value="{$v}" <if condition="$v eq $vo['template_list']">selected="selected"</if>>{$v}</option>
+								</foreach>
+							</select>	
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputTablename" class="col-sm-2 control-label">内容页模板</label>
+						<div class="col-sm-9">
+							<select name="template_show" class="form-control">
+								<foreach name='styleShowList' item='v'>
+								<option value="{$v}" <if condition="$v eq $vo['template_show']">selected="selected"</if>>{$v}</option>
+								</foreach>
+							</select>	
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="col-sm-2 control-label">描述</label>
+						<div class="col-sm-9">
+							<textarea name="description" class="form-control">{$vo.description}</textarea>
+						</div>
+					</div>
+
+
+					
+					<div class="form-group">
+						<label for="" class="col-sm-2 control-label">启用</label>
+						<div class="col-sm-9">
+							<label class="radio-inline">
+							<input type="radio" name="status" value="1" <if condition="$vo['status'] eq 1">checked="checked"</if> />启用</label>
+							<label class="radio-inline">
+							<input type="radio" name="status" value="0" <if condition="$vo['status'] eq 0">checked="checked"</if> />禁用</label>
+						</div>
+					</div>
+				
+					<div class="form-group">
+						<label for="" class="col-sm-2 control-label">排序</label>
+						<div class="col-sm-9">
+							<input type="text" name="sort" class="form-control" value="{$vo.sort}" />
+						</div>
+					</div>
+
+					<div class="row margin-botton-large">
+						<div class="col-sm-offset-2 col-sm-9">
+							<input type="hidden" name="id" value="{$vo.id}" />
+							<div class="btn-group">							
+								<button type="submit" class="btn btn-primary"> <i class="glyphicon glyphicon-saved"></i>
+									保存
+								</button>
+								<button type="button" onclick="goUrl('{:U('index')}')" class="btn btn-default"> <i class="glyphicon glyphicon-chevron-left"></i>
+									返回
+								</button>
+							</div>
+						</div>
+					</div>
+				</form>
+	
+		</div>
+	</div>
+
+		
+
+
+</block>

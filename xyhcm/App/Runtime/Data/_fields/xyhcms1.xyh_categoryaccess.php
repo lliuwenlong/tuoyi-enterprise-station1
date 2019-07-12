@@ -1,0 +1,1 @@
+a:5:{i:0;s:6:"cat_id";i:1;s:7:"role_id";i:2;s:4:"flag";i:3;s:6:"action";s:5:"_type";a:4:{s:6:"cat_id";s:20:"smallint(5) unsigned";s:7:"role_id";s:20:"smallint(5) unsigned";s:4:"flag";s:19:"tinyint(1) unsigned";s:6:"action";s:11:"varchar(30)";}}

@@ -1,0 +1,66 @@
+<extend name="Public:subBase" />
+
+<block name="content">
+	<div class="row">
+		<div class="col-lg-12">
+			<h3 class="page-header"><em class="glyphicon glyphicon-cloud-upload"></em> 
+			获取代码  
+		    </h3>
+		</div>
+		
+	</div>
+
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">调用方式一</div>
+				<div class="panel-body">
+					<div class="alert alert-success" role="alert">
+						html调用代码(启用静态缓存后，更换广告需要重新生成所有页面)
+					</div>
+					<div><input type="text" name="code1" class="form-control" value="&lt;yang:ad id='{$id}' /&gt;"></div>
+				</div>
+			</div>
+
+
+			<div class="panel panel-default">
+				<div class="panel-heading">调用方式二</div>
+				<div class="panel-body">
+					<div class="alert alert-success" role="alert">
+						js调用代码(启用静态缓存后，更换广告不用重新成所有页面)
+					</div>
+					<div><input type="text" name="code2" class="form-control" value="&lt;yang:ad id='{$id}' flag='1' /&gt;"></div>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">调用方式三</div>
+				<div class="panel-body">
+					<div class="alert alert-success" role="alert">
+						标签调用(支持html代码，灵活订制调用)[帮助]
+					</div>
+					<div>
+					<textarea name="code3" rows="10" class="form-control">
+&lt;yang:abc id='{$id}' limit=''&gt;
+<?php 
+echo '{'.'$abc.title}为标签字段'."\r\n";
+echo '{'.'$abc.content}为内容字段(文本),图片地址(图片或动画)'."\r\n";
+echo '{'.'$abc.url}为链接地址'."\r\n";
+echo '{'.'$abc.width}为广告宽度'."\r\n";
+echo '{'.'$abc.height}为广告高度'."\r\n";
+echo '{'.'$abc.autoindex}为自增变量(从0开始)'."\r\n";
+?>......
+&lt;/yang:abc&gt;
+        </textarea></div>
+				</div>
+			</div>
+
+
+	
+		</div>
+	</div>
+
+		
+
+
+</block>

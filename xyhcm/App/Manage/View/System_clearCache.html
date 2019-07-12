@@ -1,0 +1,73 @@
+<extend name="Public:base" />
+<block name="header_js">
+    <script type="text/javascript">  
+      $(function(){
+
+        $('.btn-clear-cache').click(function(event) {
+            /* Act on the event */
+            var url = "{:U('clearCache')}";
+            var id = $(this).attr('data-id');
+            $.ajax({
+                url: url,
+                type: 'POST',
+                dataType: 'json',
+                data: {id:id},
+              })
+              .done(function(data) {
+                if (data.status) {
+                    layer.alert(data.info);
+                } else{
+                    layer.alert(data.info);
+
+                }
+              }).fail(function(jqXHR,textStatus) {    
+                layer.alert(textStatus+'，请重试！'); 
+            });
+
+        });
+            
+      });
+
+    </script>
+
+
+</block>
+
+<block name="content">
+    <div class="row">
+        <div class="col-lg-12">
+            <h3 class="page-header"><em class="glyphicon glyphicon-cloud-upload"></em> 
+            {$type}         
+            </h3>
+        </div>
+        
+    </div>
+
+    
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="alert alert-success" role="alert">
+              <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+              <span class="sr-only">Note:</span>
+              <span>说明：</span>清除系统各种数据缓存。
+            </div>
+        </div>
+    </div>
+
+    <div class="row margin-botton">
+        <div class="col-md-12 column" style="margin-bottom:10px;">
+            <button class="btn btn-info btn-clear-cache" type="button" data-id="10"><em class="icon-remove-circle"> </em>清除全部应用缓存</button>    
+        </div>
+        <div class="col-md-12 column">
+            <div class="btn-group btn-group-md">
+                <button class="btn btn-info btn-clear-cache" type="button" data-id="11"><em class="icon-remove-circle"> </em>清除应用日志目录</button>
+                <button class="btn btn-default btn-clear-cache" type="button" data-id="12"><em class="icon-remove-circle"> </em>清除项目模板缓存目录</button>
+                <button class="btn btn-info btn-clear-cache" type="button" data-id="13"><em class="icon-remove-circle"> </em>清除应用缓存目录</button>
+                <button class="btn btn-default btn-clear-cache" type="button" data-id="14"><em class="icon-remove-circle"> </em>清除应用数据目录</button>
+            </div>
+        </div>
+    </div>
+
+
+
+</block>

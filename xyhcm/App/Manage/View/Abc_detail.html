@@ -1,0 +1,80 @@
+<extend name="Public:base" />
+
+<block name="content">
+    <div class="row">
+        <div class="col-lg-12">
+            <h3 class="page-header"><em class="glyphicon glyphicon-cloud-upload"></em> 
+            {$type}         
+            </h3>
+        </div>
+        
+    </div>
+
+    <div class="row margin-botton">
+        <div class="col-sm-6 column">
+            <div class="btn-group btn-group-md">
+                <button class="btn btn-default" type="button" onclick="goUrl('{:U('index')}')"><em class="glyphicon glyphicon-chevron-left"></em> 返回</button>
+                <button class="btn btn-primary" type="button" onclick="goUrl('{:U('addDetail', array('aid' => $cate['id']))}')"><em class="glyphicon glyphicon-plus-sign"></em> 添加广告</button>
+                <button class="btn btn-default" type="button" onclick="doGoSubmit('{:U('sort', array('aid' => $cate['id']))}','form_do')"><em class="glyphicon glyphicon-th-list"></em> 更新排序</button>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <form action="" method="post" id="form_do" name="form_do">
+                <div class="table-responsive">
+                    <table class="table table-hover xyh-table-bordered-out">
+                        <thead>
+                            <tr class="active">
+                                <th>编号</th>
+                                <th>广告标题</th>
+                                <th>开始时间</th>
+                                <th>结束时间</th>
+                                <th>排序</th>
+                                <th>状态</th>
+                                <th class="text-right">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <foreach name='vlist' item='v'>
+                        <tr>
+                            <td>{$v.id}</td>
+                            <td>{$v.title}</td>
+                            <td>{$v.start_time}</td>   
+                            <td>{$v.end_time}</td>              
+                            <td><input type="text" name="sortlist[{$v.id}]" value="{$v.sort}" id="sortlist" size="5" class="xyh-form-control"></td>            
+                            <td>
+                                <empty name="v['status']">
+                                <span class="label label-default">停用</span>
+                                <else/>
+                                <span class="label label-info">启用</span>
+                                </empty>
+                            </td>
+
+                            <td class="text-right">
+                                <a href="{:U('editDetail',array('id' => $v['id']), '')}" class="label label-success">编辑</a>
+                                <a href="javascript:;" onclick="toConfirm('{:U('Abc/delDetail',array('id' => $v['id'], 'aid' => $v['aid']), '')}', '确实要删除吗？')" class="label label-danger">删除</a>
+                    
+                            </td>
+                        </tr>
+                        </foreach>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+
+            <div class="row clearfix">
+                <div class="col-md-12 column">
+                    <div class="xyh-page">
+                        {$page}
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+
+    </block>

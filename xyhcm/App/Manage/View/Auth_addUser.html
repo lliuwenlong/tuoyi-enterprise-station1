@@ -1,0 +1,154 @@
+<extend name="Public:base" />
+<!-- 头部js文件|自定义  -->
+<block name="header_js">	
+	<script type="text/javascript">
+    $(function(){
+    	var inputOfDepartment = $('#DepartmentBox input[type=checkbox]');
+         inputOfDepartment.click(function(){
+
+            //attr('checked')不管用1.7+后  
+            //var checked = $(this).prop('checked');//this.checked;//IE9+
+            var checked = $(this).prop('checked'); 
+            var level = $(this).attr('level');
+
+            //选中全部子级
+	        if(level ==1){           
+	            var childInputs = $(this).parents('.panel').find('.panel-body input');     
+	            if (checked) {
+	                childInputs.prop('checked', true);
+	            }else {
+	                childInputs.prop('checked', false);
+	            }
+	            
+	        } else if(level ==2) {
+	        	//选中父级
+	            var parentInput = $(this).parents('.panel').find('.panel-heading input');	  
+	            if (checked) {
+	                parentInput.prop('checked', true);
+	            }
+
+	        }
+
+            
+        });
+  
+
+    });
+ 
+</script>
+
+</block>
+
+<block name="content">
+	<div class="row">
+		<div class="col-lg-12">
+			<h3 class="page-header"><em class="glyphicon glyphicon-cloud-upload"></em> 
+			{$meta_title}
+		    </h3>
+		</div>
+		
+	</div>
+
+
+	<div class="row">
+		<div class="col-lg-12">
+
+			<form class="form-horizontal" id="form_do" name="form_do" role="form" method="post" action="{:U('addUser')}">
+					<div class="form-group">
+						 <label for="inputUsername" class="col-sm-2 control-label">用户名</label>
+						<div class="col-sm-9">
+							<input type="text" class="validate[required,minSize[2]] form-control" name="username" id="inputUsername" placeholder="用户名" />
+						</div>
+					</div>
+					<div class="form-group">
+						 <label for="inputPassword" class="col-sm-2 control-label">密码</label>
+						<div class="col-sm-9">
+							<input type="password" class="validate[required,minSize[5]] form-control" name="password" id="inputPassword" placeholder="密码" />
+						</div>
+					</div>
+					<div class="form-group">
+						 <label for="inputGroupId" class="col-sm-2 control-label">所属部门</label>
+						<div class="col-sm-9" id="DepartmentBox">
+							<div class="row">							
+					            <volist name="vListOfDepartment" id="vo">
+					            	<div class="col-sm-3">
+					            		<div class="panel panel-info">
+				                            <div class="panel-heading">
+				                                <h3 class="panel-title">
+				                                	<label class="checkbox-inline">
+												      <input type="checkbox" name="department[]" value="{$vo.id}" level="1"> {$vo.name} 
+												    </label>
+				                                </h3>
+				                            </div>
+				                            <notempty name="vo['_child']">
+					                            <div class="panel-body">
+					                                <volist name="vo['_child']" id="vob">
+					                                	<label class="checkbox-inline">
+													      <input type="checkbox" name="department[]" value="{$vob.id}" level="2"> {$vob.name} 
+													    </label>
+					                                </volist>
+					                            </div>
+				                            </notempty>
+				                        </div>
+						            	
+								    </div>
+					            </volist>
+				            </div>
+					 
+						</div>
+					</div>
+					<div class="form-group">
+						 <label for="inputGroupId" class="col-sm-2 control-label">所属职位</label>
+						<div class="col-sm-9" id="GroupBox">
+							<volist name="vListOfGroup" id="vo">
+					       		<label class="checkbox-inline">
+								 <input type="checkbox" name="group_id[]" value="{$vo.id}">{$vo.title}				
+								 </label> 
+							</volist>
+						</div>
+					</div>
+
+					<div class="form-group">
+						 <label for="inputRealname" class="col-sm-2 control-label">姓名</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" name="realname" id="inputRealname" placeholder="姓名" />
+						</div>
+					</div>
+					<div class="form-group">
+						 <label for="inputEmail" class="col-sm-2 control-label">邮箱</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" name="email" id="inputEmail" placeholder="邮箱地址" />
+						</div>
+					</div>		
+					
+                    <div class="form-group">
+						<label for="" class="col-sm-2 control-label">状态</label>
+						<div class="col-sm-9">
+							<label class="radio-inline">
+							 	<input type="radio" name="is_lock" value="0" checked="checked" />正常				
+							 </label>
+							<label class="radio-inline">
+							 	<input type="radio" name="is_lock" value="1" />锁定		
+							 </label>	
+						</div>
+					</div>
+
+					
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-9">
+							<div class="btn-group">								 
+                                <button type="submit" class="btn btn-primary"><i class="icon-save"> </i>保存</button>
+                                <a href="{:U('indexOfUser')}" class="btn btn-default"><i class="icon-arrow-left"> </i>返回</a>
+                            </div>
+						</div>
+					</div>
+				</form>
+				
+	
+		</div>
+	</div>
+
+		
+
+
+</block>

@@ -1,0 +1,59 @@
+<extend name="Public:base" />
+
+<block name="content">
+    <div class="row">
+        <div class="col-lg-12">
+            <h3 class="page-header"><em class="glyphicon glyphicon-cloud-upload"></em> 
+            {$meta_title}        
+            </h3> 
+        </div>
+        
+    </div>
+
+    <div class="row margin-botton">
+        <div class="col-sm-6 column">
+            <div class="btn-group btn-group-md"> 
+                <button class="btn btn-default" type="button" onclick="goUrl('{:U('index')}')"><em class="glyphicon glyphicon-chevron-left"> </em> 返回</button>           
+                <button class="btn btn-primary" type="button" onclick="goUrl('{:U('addRule')}')"><em class="glyphicon glyphicon-plus-sign"></em> 添加规则</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <volist name="vlist" id="vo">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                                <div class="col-xs-8">
+                                    <h3 class="panel-title"><em class="fa fa-long-arrow-right"></em> {$vo.title}</h3>
+                                </div>
+                                <div class="col-xs-4 text-right">
+                                    <a href="{:U('addRule', array('pid' => $vo['id']))}" class="btn btn-xs btn-primary" title="添加"><i class="glyphicon glyphicon-plus-sign"></i> </a>      
+                            <a href="{:U('editRule', array('id' => $vo['id']))}" class="btn btn-xs btn-success" title="修改"><i class="glyphicon glyphicon-edit"></i> </a>
+                            <button type="button" onclick="del('{:U('delRule', array('id' => $vo['id']))}')" class="btn btn-xs btn-danger" title="删除"><i class="glyphicon glyphicon-remove"></i> </button>
+                                </div>
+                            </div>
+                        
+                    </div>
+                    <div class="panel-body xyh-panel-body">
+                        <notempty name="vo['_child']">
+                            <volist name="vo['_child']" id="vo2"> 
+                                <div class="col-md-3 column">                   
+                                <span class="label <notempty name='vo2["status"]'>label-primary<else />label-default</notempty>">{$vo2.title}</span> 
+                                <a href="{:U('editRule', array('id' => $vo2['id']))}" class="label label-success"><i class="glyphicon glyphicon-edit"></i></a> 
+                                <a href="javascript:;" onclick="del('{:U('delRule', array('id' => $vo2['id']))}')"  class="label label-danger"><i class="glyphicon glyphicon-remove"></i></a>&nbsp; 
+                                </div>
+                            </volist>
+                        </notempty> 
+                    </div>
+                </div>
+            
+            </volist>
+
+
+        </div>
+    </div>
+
+</block>

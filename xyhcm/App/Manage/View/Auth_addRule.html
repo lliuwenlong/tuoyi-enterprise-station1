@@ -1,0 +1,79 @@
+<extend name="Public:base" />
+
+<block name="content">
+	<div class="row">
+		<div class="col-lg-12">
+			<h3 class="page-header"><em class="glyphicon glyphicon-cloud-upload"></em> 
+			{$meta_title}
+		    </h3>
+		</div>
+		
+	</div>
+
+
+	<div class="row">
+		<div class="col-lg-12">
+
+				<form method='post' class="form-horizontal" id="form_do" name="form_do" action="{:U('addRule')}">				
+					
+					<div class="form-group">
+						<label for="inputTitle" class="col-sm-2 control-label">规则名称</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" name="title" id="inputTitle" placeholder="名称/描述" required="required" />
+						</div>
+					</div>
+					<div class="form-group">
+						 <label for="inputName" class="col-sm-2 control-label">规则标识</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" name="name" id="inputName" placeholder="如：Manage/Index/index" required="required" />
+						</div>
+					</div>
+					<div class="form-group">
+						 <label for="inputName" class="col-sm-2 control-label">所属级别</label>
+						<div class="col-sm-9">
+							<select class="form-control" name="pid">
+					            <option value="0">顶级规则</option>
+					            <volist name="plist" id="vo">
+					            <option value="{$vo.id}" <if condition="$vo['id'] eq $pid">selected="selected"</if>><if condition="$vo['level'] gt 1">&nbsp;</if>{$vo.delimiter}{$vo.title}</option>
+					            </volist>
+					        </select>
+						</div>
+					</div>
+					<div class="form-group">
+						 <label for="inputCondition" class="col-sm-2 control-label">附加条件</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" name="condition" id="inputCondition" placeholder="规则附件条件" />
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="" class="col-sm-2 control-label">状态</label>
+						<div class="col-sm-9">
+							<label class="radio-inline">
+							<input type="radio" name="status" value="1" checked="checked"  />开启</label>
+							<label class="radio-inline">
+							<input type="radio" name="status" value="0" />关闭</label>
+						</div>
+					</div>				
+
+					<div class="row margin-botton-large">
+						<div class="col-sm-offset-2 col-sm-9">
+							<div class="btn-group">							
+								<button type="submit" class="btn btn-primary"> <i class="glyphicon glyphicon-saved"></i>
+									保存
+								</button>
+								<button type="button" onclick="goUrl('{:U('rule')}')" class="btn btn-default"> <i class="glyphicon glyphicon-chevron-left"></i>
+									返回
+								</button>
+							</div>
+						</div>
+					</div>
+				</form>
+	
+		</div>
+	</div>
+
+		
+
+
+</block>

@@ -1,0 +1,180 @@
+<extend name="Public:base" />
+<block name="header_js">
+	<script language="JavaScript">
+    $(function(){
+        $("input:radio[name='config[HOME_URL_MODEL]']").click(function(){
+
+            if ( $(this).prop('checked')) {
+            	var val = $(this).val();
+            	if (val == 1 || val ==2 ) {
+					$('#UrlRouter1').show();
+            	}else {
+					$('#UrlRouter1').hide();
+
+            	}
+            }
+            
+        });
+
+      
+    });
+    //-->
+</script>
+</block>
+<block name="content">
+	<div class="row">
+		<div class="col-lg-12">
+			<h3 class="page-header"><em class="glyphicon glyphicon-cloud-upload"></em> 
+			伪静态与静态缓存
+		    </h3>
+		</div>
+		
+	</div>
+
+
+	<div class="row">
+		<div class="col-lg-12">
+			<form method='post' class="form-horizontal" id="form_do" name="form_do" action="{:U('url')}">
+				<div class="panel panel-default">
+					<div class="panel-heading">伪静态</div>
+					<div class="panel-body">
+
+						<div class="form-group">
+							<label for="" class="col-sm-2 control-label">URL模式</label>
+							<div class="col-sm-9">
+								<label class="radio-inline"><input type="radio" name="config[HOME_URL_MODEL]" value="0" <if condition="$vo['HOME_URL_MODEL'] eq 0">checked="checked"</if>>普通模式</label>
+								<div>URL参数模式：http://www.xyhcms.com/index.php?m=List&a=index&id=1</div> 
+								<label class="radio-inline"><input type="radio" name="config[HOME_URL_MODEL]" value="1" <if condition="$vo['HOME_URL_MODEL'] eq 1">checked="checked"</if>>PATHINFO模式</label>
+								<div>PATHINFO模式：http://www.xyhcms.com/index.php/List/index/id/1</div> 
+								<label class="radio-inline"><input type="radio" name="config[HOME_URL_MODEL]" value="2" <if condition="$vo['HOME_URL_MODEL'] eq 2">checked="checked"</if>>REWRITE模式(需要URL_REWRITE支持)</label>
+								<div>REWRITE模式和PATHINFO模式功能一样,需开启URL_REWRITE模块(隐藏index.php),如：<br/>http://www.xyhcms.com/List/index/id/1/</div>
+								<label class="radio-inline"><input type="radio" name="config[HOME_URL_MODEL]" value="3" <if condition="$vo['HOME_URL_MODEL'] eq 3">checked="checked"</if>>兼容模式</label>
+								<div>兼容模式：http://www.xyhcms.com/index.php?s=/List/index/id/1</div> 
+							</div>
+						</div>	
+						<div class="form-group">
+							<label for="" class="col-sm-2 control-label">参数分割符</label>
+							<div class="col-sm-9">
+								<input type="text" name="config[HOME_URL_PATHINFO_DEPR]" value="{$vo.HOME_URL_PATHINFO_DEPR}" class="form-control" />
+								<div>针对PATHINFO模式,默认为"/",如改为"-"：http://www.xyhcms.com/index.php/List-index-id-1</div> 
+							</div>
+						</div>	
+
+					</div>
+				</div>
+
+				<div class="panel panel-default" id="UrlRouter1" <if condition="$vo['HOME_URL_MODEL'] neq 1 && $vo['HOME_URL_MODEL'] neq 2"> style="display:none;"</if>>
+					<div class="panel-heading">开启URL路由(路由规则不熟悉的不要乱改)</div>
+					<div class="panel-body">
+
+						<div class="form-group">
+							<label for="" class="col-sm-2 control-label">开启路由</label>
+							<div class="col-sm-9">
+								<label class="checkbox-inline"><input type="checkbox" name="config[HOME_URL_ROUTER_ON]" value="1" <if condition="$vo['HOME_URL_ROUTER_ON'] eq 1">checked="checked"</if> />开启</label>
+							</div>
+						</div>	
+						<div class="form-group">
+							<label for="" class="col-sm-2 control-label">路由规则</label>
+							<div class="col-sm-9">
+								<textarea name="config[HOME_URL_ROUTE_RULES]" class="form-control" rows="5">{$vo.HOME_URL_ROUTE_RULES}</textarea>
+							</div>
+
+						</div>
+										
+					</div>
+				</div>
+
+				<div class="panel panel-default">
+					<div class="panel-heading">静态缓存(缓解服务器压力)</div>
+					<div class="panel-body">
+						<div class="form-group">
+							<label for="" class="col-sm-2 control-label">开启静态缓存</label>
+							<div class="col-sm-9">
+								<label class="checkbox-inline"><input type="checkbox" name="config[HOME_HTML_CACHE_ON]" value="1" <if condition="$vo['HOME_HTML_CACHE_ON'] eq 1">checked="checked"</if> />开启电脑版缓存</label>
+								<label class="checkbox-inline"><input type="checkbox" name="config[MOBILE_HTML_CACHE_ON]" value="1" <if condition="$vo['MOBILE_HTML_CACHE_ON'] eq 1">checked="checked"</if> />开启手机版缓存</label>
+							</div>
+						</div>	
+						<div class="form-group">
+							<label for="" class="col-sm-2 control-label">缓存规则</label>
+							<div class="col-sm-9">
+								<div class="row">
+									<div class="col-sm-3">
+										<label class="checkbox-inline"><input type="checkbox" name="config[HTML_CACHE_INDEX_ON]" value="1" <if condition="$vo['HTML_CACHE_INDEX_ON'] eq 1">checked="checked"</if> />首页缓存</label>
+									</div>
+
+									<div class="col-sm-9 input-group">
+										<span class="input-group-addon">缓存时间</span>
+										<input type="text" name="config[HTML_CACHE_INDEX_TIME]" class="form-control" value="{$vo.HTML_CACHE_INDEX_TIME}" />
+										<span class="input-group-addon">秒</span>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-3">
+										<label class="checkbox-inline"><input type="checkbox" name="config[HTML_CACHE_LIST_ON]" value="1" <if condition="$vo['HTML_CACHE_LIST_ON'] eq 1">checked="checked"</if> />栏目缓存</label>
+									</div>
+
+									<div class="col-sm-9 input-group">
+										<span class="input-group-addon">缓存时间</span>
+										<input type="text" name="config[HTML_CACHE_LIST_TIME]" class="form-control" value="{$vo.HTML_CACHE_LIST_TIME}" />
+										<span class="input-group-addon">秒</span>
+									</div>
+
+								</div>
+								<div class="row">
+									<div class="col-sm-3">
+										<label class="checkbox-inline"><input type="checkbox" name="config[HTML_CACHE_SHOW_ON]" value="1" <if condition="$vo['HTML_CACHE_SHOW_ON'] eq 1">checked="checked"</if> />文章缓存</label>
+									</div>
+
+									<div class="col-sm-9 input-group">
+										<span class="input-group-addon">缓存时间</span>
+										<input type="text" name="config[HTML_CACHE_SHOW_TIME]" class="form-control" value="{$vo.HTML_CACHE_SHOW_TIME}" />
+										<span class="input-group-addon">秒</span>
+									</div>
+
+								</div>
+								<div class="row">
+									<div class="col-sm-3">
+										<label class="checkbox-inline"><input type="checkbox" name="config[HTML_CACHE_SPECIAL_ON]" value="1" <if condition="$vo['HTML_CACHE_SPECIAL_ON'] eq 1">checked="checked"</if> />专题缓存</label>
+									</div>
+
+									<div class="col-sm-9 input-group">
+										<span class="input-group-addon">缓存时间</span>
+										<input type="text" name="config[HTML_CACHE_SPECIAL_TIME]" class="form-control" value="{$vo.HTML_CACHE_SPECIAL_TIME}" />
+										<span class="input-group-addon">秒</span>
+									</div>
+
+								</div>
+
+							</div>
+						</div>	
+
+					</div>
+				</div>
+
+				
+
+				
+
+
+
+					
+			
+
+				<div class="row margin-botton-large">
+					<div class="col-sm-offset-2 col-sm-9">
+						<div class="btn-group">							
+							<button type="submit" class="btn btn-primary"> <i class="glyphicon glyphicon-saved"></i>
+								保存
+							</button>
+						</div>
+					</div>
+				</div>
+			</form>
+	
+		</div>
+	</div>
+
+		
+
+
+</block>

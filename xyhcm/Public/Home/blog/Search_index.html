@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>{$title}-<yang:sitename /></title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/main.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/ez.css" />
+<script type="text/javascript" src="__DATA__/static/js/jquery-1.12.4.min.js" ></script>
+</head>
+<body>
+<!-- Layout 2 -->
+<div class="ez-mw wraper">
+	<include file="Public:header" />
+	
+    <!-- Module 2A -->
+	<div class="ez-wr marginT">
+		<div class="ez-fl ez-negmr ez-66">	
+        	<div class="one-box">
+				<h1 id="archive-title">搜索结果</h1>
+				<div id="sub-description">
+				<p>关键词： <span class="red">{$keyword}</span></p>
+				</div>
+			</div>
+			<empty name='keyword'>
+			<div class="one-box">请输入关键词，然后点搜索！</div>
+			<else/>	
+			<yang:slist keyword='$keyword' pagesize='10'>			
+			<div class="one-box">
+				<h2 class="one-box-title"><a href="{$slist.url}">{$slist.title}</a></h2>
+				<div class="post-meta">
+					<span class="meta-date">{$slist.publish_time|get_date='Y年m月d日'}</span>
+					<span class="meta-category">{$slist.cate_name}</span>
+					<span class="meta-permalink"><a href="{$slist.url}">永久链接</a></span>
+				</div>
+				<if condition="!empty($slist['litpic'])">
+					<p class="center"><img src="{$slist.litpic}" /></p>
+				</if>
+				{$slist.description}
+			</div>
+			</yang:slist>	
+			</empty>
+			
+			<div class="pager clearfix">{$page}</div>
+		
+		</div>
+		<include file="Public:left" />
+	</div>
+	
+	<include file="Public:footer" />
+</div>
+
+</body>
+</html>

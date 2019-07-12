@@ -1,0 +1,56 @@
+<extend name="Public:base" />
+
+<block name="content">
+    <div class="row">
+        <div class="col-lg-12">
+            <h3 class="page-header"><em class="glyphicon glyphicon-cloud-upload"></em> 
+            {$type}         
+            </h3>
+        </div>
+        
+    </div>
+
+    
+    <div class="row">
+        
+        <empty name="html_cache_on">
+            <div class="col-sm-12">
+                <div class="alert alert-danger" role="alert">
+                  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                  <span class="sr-only">Note:</span>
+                  <span>说明：</span>静态缓存(HTML)功能已经停用，不需要使用此更新功能。
+                </div>
+            </div>
+        <else />
+        <div class="col-sm-12">
+            <div class="alert alert-success" role="alert">
+              <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+              <span class="sr-only">Note:</span>
+              <span>说明：</span>静态缓存(HTML)功能已经开启，可以使用此更新功能。
+            </div>
+        </div>
+        </empty>
+    </div>
+
+    <div class="row margin-botton">
+        <div class="col-lg-12">
+
+
+                <button class="btn btn-success" type="button" onclick="goUrl('{:U('all')}', 'form_do')"><em class="glyphicon glyphicon-play-circle"></em> 一键更新全站</button>
+           
+
+                <button class="btn btn-success" type="button" onclick="goUrl('{:U('home')}', 'form_do')"><em class="glyphicon glyphicon-play-circle"></em> 更新首页</button>
+            
+                <button class="btn btn-success" type="button" onclick="goUrl('{:U('lists')}', 'form_do')"><em class="glyphicon glyphicon-play-circle"></em> 更新栏目</button>
+            
+                <button class="btn btn-success" type="button" onclick="goUrl('{:U('shows')}', 'form_do')"><em class="glyphicon glyphicon-play-circle"></em> 更新文档</button>
+            
+                <button class="btn btn-success" type="button" onclick="goUrl('{:U('special')}', 'form_do')"><em class="glyphicon glyphicon-play-circle"></em> 更新专题</button>
+            
+        </div>
+    </div> 
+
+
+
+
+</block>
