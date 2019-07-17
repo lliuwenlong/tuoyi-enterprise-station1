@@ -4,6 +4,10 @@ import Index from './views/Index.vue';
 import Profit from './views/Profit/Profit.vue';
 import Introduce from './views/Introduce/Introduce.vue';
 import CustomerCase from './views/CustomerCase/CustomerCase.vue';
+import Daoda from './views/Daoda/Daoda.vue';
+import Qudao from './views/Qudao/Qudao.vue';
+import Shizi from './views/Shizi/Shizi.vue';
+import Guandian from './views/Guandian/Guandian.vue';
 Vue.use(Router)
 
 export default new Router({
@@ -29,6 +33,26 @@ export default new Router({
 			path: '/customerCase',
 			name: 'customerCase',
 			component: CustomerCase
+		},
+		{
+			path: '/daoda',
+			name: 'daoda',
+			component: Daoda
+		},
+		{
+			path: '/qudao',
+			name: 'qudao',
+			component: Qudao
+		},
+		{
+			path: '/shizi',
+			name: 'shizi',
+			component: Shizi
+		},
+		{
+			path: '/guandian',
+			name: 'guandian',
+			component: Guandian
 		}
 	]
 })
