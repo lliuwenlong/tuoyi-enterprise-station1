@@ -1,0 +1,9 @@
+body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select {margin: 0;padding: 0;}
+body {font-family: "寰蒋闆呴粦", "MicrosoftYaHei", HELVETICA;background: #fff;overflow-x: hidden;}
+h1,h2,h3,h4,h5,h6 {font-weight: normal;font-size: 100%;}
+a {text-decoration: none;color: #333333;}
+a:hover {text-decoration: none;}
+em {font-style: normal;}
+li {list-style: none;}
+table { border-collapse: collapse;border-spacing: 0;}
+input[type=button],input[type=submit],input[type=file],button {cursor: pointer;  -webkit-appearance: none;  border: 0px;}
