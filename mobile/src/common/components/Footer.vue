@@ -31,7 +31,7 @@
                     <div class="nac-img">
                         <img :src="item.imgUrl"/>
                     </div>
-                    <span>首页</span>
+                    <span>{{item.navText}}</span>
                 </router-link>
                 <!-- <a href="/?wxref=mp.weixin.qq.com">
                     <div class="nac-img">

@@ -12,7 +12,7 @@ import Case      from '@/pages/case/Case'
 import Viewpoint from '@/pages/viewpoint/Viewpoint'
 import Timetable from '@/pages/timetable/Timetable'
 
-import Commonnews from '@/common/commonnews/Commonnews'
+import CommonNews from '@/common/commonnews/CommonNews'
 
 Vue.use(Router)
 
@@ -56,7 +56,7 @@ export default new Router({
       component:Timetable
     },{
       path:'/Commonnews',
-      name:'Commonnews',
-      component:Commonnews
+      name:'CommonNews',
+      component:CommonNews
     }]
 })

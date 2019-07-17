@@ -8,8 +8,11 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 
 // styles
 import "./assets/styles/reset.css"
-import "./assets/styles/border.css"
+// import "./assets/styles/border.css"
 import 'swiper/dist/css/swiper.css'
+
+// 适配
+import 'lib-flexible/flexible'
 
 fastClick.attach(document.body)
 Vue.use(VueAwesomeSwiper, /* { default global options } */)

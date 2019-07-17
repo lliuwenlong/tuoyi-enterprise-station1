@@ -45,8 +45,23 @@
                     <p>GEQIN CULTURE</p>
                 </div>
                 <div class="cultureList">
-                    <div class="swiper-container ">
+                    <div class="swiper-container " :options="swiperOption">
                         <div class="swiper-wrapper">
+                            <div class="swiper-slide"
+                            v-for="item of Texts"
+                            :key="item.id"
+                            >
+                                <div class="cul">
+                                    <div class="cTitle">
+                                        <h2>{{item.titleText}}</h2>
+                                        <span>{{item.titleEn}}</span>
+                                    </div>
+                                    <span class="xian"></span>
+                                    <div class="cont">
+                                        <p>{{item.titleCont}}<br>{{item.titleBr}}</p>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="swiper-slide">
                                 <div class="cul">
                                     <div class="cTitle">
@@ -139,8 +154,7 @@
                         <!-- 如果需要分页器 -->
                         <div class="swiper-pagination"></div>
                     </div>
-                </div>
-                    
+                </div>            
             </section>
                 
                 <section class="culture curriculum">
@@ -359,13 +373,84 @@
 </template>
 
 <script>
+
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
 // 轮播图未完成
 export default {
-    name:'IntroduceContent'
+    name:'IntroduceContent',
+    data() {
+        return {
+            swiperOption: {
+            // 　　autoplay: {
+            //         delay: 30000,
+            //         duration:3000,
+            //         speed:3000,
+            //         disableOnInteraction: false // 手动切换之后继续自动轮播
+            // 　　},
+                observer: true, //修改swiper自己或子元素时，自动初始化swiper
+                observeParents: true,
+                loop: true
+            },
+
+            Texts: [{
+                id:'0001',
+                titleText:'定位',
+                titleEn:'POSITIONING',
+                titleCont:'企业运营系统',
+                titleBr:'建设领先者'
+            },{
+                id:'0002',
+                titleText:'企业愿景',
+                titleEn:'ENTERPRISEVISION',
+                titleCont:'打造商业平台',
+                titleBr:'用教育孵化产业'
+            },{
+                id:'0003',
+                titleText:'使命',
+                titleEn:'MISSION',
+                titleCont:'帮助企业提升管理成熟度，为中国成为世界第一经济强国而奋斗终身!',
+                titleBr:''
+            },{
+                id:'0004',
+                titleText:'价值观',
+                titleEn:'SENSE OF WORTH',
+                titleCont:'客户第一 团队合作',
+                titleBr:'敢于担当 持续成长'
+            },{
+                id:'0005',
+                titleText:'核心价值',
+                titleEn:'CORE VALUE',
+                titleCont:'实战 系统 超值',
+                titleBr:'我是转折点'
+            },{
+                id:'0006',
+                titleText:'经营理念',
+                titleEn:'CONCEPT',
+                titleCont:'敬畏规律 真爱企业',
+                titleBr:''
+            },{
+                id:'0007',
+                titleText:'企业信念',
+                titleEn:'ENTERPRISE BELIEF',
+                titleCont:'突破极限',
+                titleBr:'向不可能挑战'
+            }]
+        }
+    }
 }
 </script>
 
 <style>
+
+
+    .swiper-slide{
+        width:50%;
+        /* 根据内容调整宽度 */
+    }
+
+
+
     #banner {
         width: 100%;
         overflow: hidden;
@@ -511,6 +596,7 @@ export default {
         position: relative;
         overflow: initial;
         padding-bottom: 40px;
+        /* background: #eee; */
         }
         #Company_introduction .culture {
         overflow: hidden;
@@ -520,6 +606,7 @@ export default {
         margin-top: 50px;
         position: relative;
         top: -5px !important;
+        /* background: #eee; */
         }
         #Company_introduction .culture .cultureList {
         width: 94%;
@@ -604,3 +691,4 @@ export default {
         margin-top: 30px;
     }
 </style>
+
