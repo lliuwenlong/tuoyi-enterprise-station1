@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Index from './views/Index.vue';
 import Profit from './views/Profit/Profit.vue';
+import Introduce from './views/Introduce/Introduce.vue';
 Vue.use(Router)
 
 export default new Router({
@@ -17,6 +18,11 @@ export default new Router({
 			path: '/profit',
 			name: 'Profit',
 			component: Profit
+		},
+		{
+			path: '/introduce',
+			name: 'Introduce',
+			component: Introduce
 		}
 	]
 })

@@ -6,7 +6,6 @@
                     src="http://www.igeqin.com/App/Tpl/Home/Defaults/Public/images/images2/logo.png"
                 />
             </div>
-
             <ul class="nav_list">
                 <li>
                     <a href="index.html">

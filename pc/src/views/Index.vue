@@ -37,10 +37,10 @@
                     </li>
                     <div class="nav_xian2" style="display: block !important;"></div>
                     <li>
-                        <a href="introduce.html">
+                        <router-link to="/introduce" tag="a">
                             <span>格勤介绍</span>
                             <span>Introduce</span>
-                        </a>
+                        </router-link>
                     </li>
                     <div class="nav_xian2" style="display: block !important;"></div>
                     <li>
