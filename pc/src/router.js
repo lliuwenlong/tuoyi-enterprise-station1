@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Index from './views/Index.vue';
 import Profit from './views/Profit/Profit.vue';
 import Introduce from './views/Introduce/Introduce.vue';
+import CustomerCase from './views/CustomerCase/CustomerCase.vue';
 Vue.use(Router)
 
 export default new Router({
@@ -23,6 +24,11 @@ export default new Router({
 			path: '/introduce',
 			name: 'Introduce',
 			component: Introduce
+		},
+		{
+			path: '/customerCase',
+			name: 'customerCase',
+			component: CustomerCase
 		}
 	]
 })
