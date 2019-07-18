@@ -103,8 +103,8 @@ export default {
         }
         .local .local_top h2 {
         padding-left: 20px;
-        font-size: 1.5rem;
-        font-size:15px;
+        font-size: .5rem;
+        /* font-size:15px; */
         color: #017dcc;
         display: block;
         background: url(http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/ge_icon.png) no-repeat 0px;
@@ -196,7 +196,7 @@ export default {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 15px 0px;
+        padding: 5px 0px;
         border-bottom: 1px solid #cccccc;
         display: flex;
         align-items: center;
@@ -211,8 +211,8 @@ export default {
         overflow: hidden;
         }
         .local .news_geqin .news_li .news_liLeft .n_img a{
-            display: inline-block;
-            height: 100px;
+        display: inline-block;
+        height: 100px;
         overflow: hidden;
         display: flex;
         align-items: center;
@@ -238,7 +238,7 @@ export default {
         font-size: 1.4rem;
         font-size: 14px;
         display: block;
-            color: #333333;
+        color: #333333;
         }
         .local .news_geqin .news_li .news_liRight p {
         font-size: 1.2rem;

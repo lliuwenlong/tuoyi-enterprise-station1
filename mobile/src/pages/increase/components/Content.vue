@@ -108,16 +108,17 @@
                 <div class="local_box">
                     <form enctype="multipart/form-data" method="post" id="frm" action="/Channel/feedbackAdd/l/cn"> 
                         <input type="hidden" name="ChannelID" value="148" >
-                        <ul>
+                        <ul class="form_pe">
                             <li><input type="text" placeholder="姓名" name="f1" required="required" id="f1" /><span>*</span></li>
                             <li><input type="text" placeholder="手机" name="f3" required="required" id="f3" /><span>*</span></li>
                             <li><input type="text" placeholder="公司" name="InfoTitle" required="required" id="InfoTitle" /><span>*</span></li>
                             <li><input type="text" placeholder="职位" name="f2" id="f2" /><span>*</span></li> 
                             <li><input type="text" placeholder="是否老学员" name="f4" id="f4" /><span>*</span></li>
                         </ul>
-                        <input type="hidden" name="Tag" value="Wap" />
-                        <input type="submit" value="咨询近期课程" />
-                    <input type="hidden" name="__hash__" value="db8fdbca22ae65a323c0d93703021657_9113dc72a347d539ed08ec920536d983" /></form>
+                            <input type="hidden" name="Tag" value="Wap" />
+                            <input type="submit" value="咨询近期课程" />
+                        <input type="hidden" name="__hash__" value="db8fdbca22ae65a323c0d93703021657_9113dc72a347d539ed08ec920536d983" />
+                    </form>
                 </div>
             </section>
         </div>
@@ -132,6 +133,9 @@ export default {
 </script>
 
 <style scoped>
+    #banner img{
+        width: 100%;
+    }
     .profit {
         width: 100%;
         overflow: hidden;
@@ -242,6 +246,9 @@ export default {
         .profit .advan .shizhan img {
         width: 100%;
         }
+        .local .lrqd img{
+            width: 100%;
+        }
         .profit .advan .shizhan:last-child {
         margin-bottom: 0px;
         }
@@ -260,54 +267,63 @@ export default {
     /* 咨询课程 */
     .local .local_box {
         width: 70%;
-        margin: 20px auto;
+        margin: 30px auto;
         overflow: hidden;
-        }
-        .local .local_box .logo {
+    }
+    .local .local_box .logo {
         width: 80%;
         overflow: hidden;
         margin: 0px auto;
         margin-bottom: 10px;
-        }
-        .local .local_box .logo img {
+    }
+    .local .local_box .logo img {
         width: 100%;
         display: block;
         margin: 0px auto;
-        }
-        .local .local_box form {
+    }
+    .local .local_box form {
         display: block;
-        }
-        .local .local_box form ul {
+        margin-top:20px;
+    }
+    .local .local_box form ul {
         width: 100%;
-        }
-        .local .local_box form ul li {
+    }
+    .local .local_box form ul li {
         width: 100%;
         position: relative;
         margin-bottom: 10px;
-        }
-        .local .local_box form ul li input[type='text'] {
-        width: 100%;
-        padding: 8px;
+    }
+    .local .local_box form ul li input[type='text'] {
+        width: 95%;
+        padding: 15px;
+        margin:8px;
         border: 1px solid #e5e5e5;
         box-sizing: border-box;
-        }
-        .local .local_box form ul li span {
+        font-size: 28px;
+    }
+    .local .local_box form ul li input[type='text']:required+span{
+        background: url() no-repeat right center;
+        display: inline;
+    }
+    /* .local .local_box form ul li span {
         display: block;
         position: absolute;
         right: 10px;
         top: 1rem;
         font-size: 1.6rem;
-        }
-        .local .local_box form input[type="submit"] {
+    } */
+    .local .local_box form input[type="submit"] {
         display: block;
         padding: 6px;
         text-align: center;
-        border-radius: 5px;
+        border-radius: 8px;
         color: #FFFFFF;
         background: #0071c3;
-        width: 60%;
+        width: 55%;
+        height: 80px;
         font-size: 1.8rem;
-        font-size: 18px;
+        font-size: 32px;
         margin: 15px auto;
     }
+    
 </style>

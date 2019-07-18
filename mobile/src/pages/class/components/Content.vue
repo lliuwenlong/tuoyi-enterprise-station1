@@ -8,21 +8,35 @@
                 <div class="about_title wow fadeInDown" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInDown;">
                     <div class="pro">
                         <span></span>
-                        <h3 style="font-weight: 700;">到答课堂</h3>
+                        <h3>到答课堂</h3>
                         <span></span>
                     </div>
-                    <p>DAODA CLASSROOM</p>
+                    <p style="margin:5px">DAODA CLASSROOM</p>
                 </div>
                 <div class="dada_js">
-                    到答课堂是一款个人专属移动课堂,
+                    <ul>
+                        <li>到答课堂是一款个人专属移动课堂</li>
+                        <li>提供实效的企业管理方法和前沿商业思想是创业者、企业家、</li>
+                        <li>高管、职业经理等人群从0到1,1到N的实战商学平台</li>
+                    </ul>
+                    <!-- <br>到答课堂是一款个人专属移动课堂,
                     <br>提供实效的企业管理方法和前沿商业思想是创业者、企业家、
-                    <br>高管、职业经理等人群从0到1,1到N的实战商学平台
+                    <br>高管、职业经理等人群从0到1,1到N的实战商学平台 -->
                 </div>
                 <div class="biao">
                     <img src="http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/daoda_biao.png">
                 </div>
             </section>
             <section class="youshi">
+                <ul>
+                    <li><span>语音课程</span>：上下班途中听到答碎片化时间上到答</li>
+                    <li><span>视频课程</span>：每周两集战略、股权、财务、法律、薪酬、积分课程</li>
+                    <li><span>到答商城</span>：企业管理图书，操作手册在线平台直接购买</li>
+                    <li><span>边学边赚</span>：程学习结束分享朋友圈，好友学习亦可获取奖金</li>
+                    <li><span>精选好文</span>：世界百强知名企业内部管理干货精选案列展示</li>
+                </ul>
+            </section>
+            <!-- <section class="youshi">
                 <p class="yous">
                     <span>语音课程</span>：上下班途中听到答碎片化时间上到答</p>
                 <p class="yous">
@@ -33,7 +47,7 @@
                     <span>边学边赚</span>：课程学习结束分享朋友圈，好友学习亦可获取奖金</p>
                 <p class="yous">
                     <span>精选好文</span>：世界百强知名企业内部管理干货精选案列展示</p>
-            </section>
+            </section> -->
             <section class="video">
                 <img src="http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/daoda_video.jpg">
                 <video id="video" loop="loop" controls="controls" poster="http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/qiye_video.jpg">
@@ -64,7 +78,9 @@ export default {
 <style scoped>
 
         /*到答课堂页面*/
-
+        #banner img{
+            width: 100%;
+        }
         #daoda {
             width: 100%;
         }
@@ -75,7 +91,7 @@ export default {
             background: #FFFFFF;
             overflow: hidden;
             padding: 5% 0px;
-            border-radius: 6px;
+            border-radius: 8px;
             position: relative;
             top: -30px;
             box-shadow: 0px 0px 10px #CCCCCC;
@@ -97,13 +113,19 @@ export default {
             font-size: 1.2rem;
             font-size: 12px;
             border-radius: 3px;
-            margin: 10px auto;
+            /* margin: 10px auto; */
             background: #ececec;
             text-align: center;
-            padding: 1%;
+            padding: 2%;
             line-height: 1.7rem;
             line-height: 17px;
         }
+        #daoda .answer .dada_js  li{
+            margin:10px;
+            line-height: 28px;
+            padding-top: 15px;
+        }
+
 
         #daoda .answer .biao {
             width: 88%;
@@ -116,13 +138,15 @@ export default {
         }
 
         #daoda .youshi {
-            width: 100%;
+            width: 85%;
             background: #FFFFFF;
             margin: 0px auto;
-            padding: 12% 0px;
-            margin-top: -60px;
+            margin-bottom: 12%;
         }
-
+        #daoda .youshi li{
+            margin: 15px auto;
+            line-height: 30px;
+        }
         #daoda .youshi .yous {
             width: 90%;
             margin: 0px auto;
@@ -133,8 +157,7 @@ export default {
             line-height: 20px;
             padding-left: 8%;
         }
-
-        #daoda .youshi .yous span {
+        #daoda .youshi span {
             font-size: 1.1rem;
             font-size: 11px;
             color: #333333;
@@ -206,8 +229,8 @@ export default {
 
         .about_title .pro h3 {
             color: #1680cc;
-            font-size: 1.8rem;
-            font-size: 18px;
+            font-size: .5rem;
+            /* font-size: 25px; */
             padding: 0px 3%;
             letter-spacing: 2px;
             font-weight: 700;
@@ -216,7 +239,7 @@ export default {
         .about_title .pro span {
             display: block;
             width: 12%;
-            height: 1px;
+            height: 2px;
             background: #666666;
         }
 

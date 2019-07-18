@@ -91,7 +91,7 @@ export default {
         margin: 15px auto;
         box-shadow: 0px 0px 10px #cccccc;
         padding-top: 45px;
-        margin-top: -84px;
+        margin-top: -64px;
     }
     .nav ul {
         width: 100%;
@@ -112,11 +112,12 @@ export default {
         padding: 0px 10px;
     }
     .nav ul li a img {
-        width: 100%;
+        width: 80%;
     }
     .nav ul li a span {
         display: block;
         text-align: center;
+        margin-top:13px;
         font-size: 14px;
         color: black;
     }

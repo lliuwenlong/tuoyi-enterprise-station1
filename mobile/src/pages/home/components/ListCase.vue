@@ -96,55 +96,57 @@ export default {
         }
         .local .local_top {
         width: 94%;
+        height: 45px;
+        line-height: 45px;
         margin: 0px auto;
         padding-bottom: 8px;
         display: flex;
         justify-content: space-between;
+        /* border: 1px solid red; */
         }
         .local .local_top h2 {
-        padding-left: 20px;
-        font-size: 1.5rem;
-        font-size:15px;
-        color: #017dcc;
-        display: block;
-        background: url(http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/ico3.png) no-repeat 0px;
-        background-size: 8%;
+            padding-left: 33px;
+            font-size: .35rem;
+            color: #017dcc;
+            display: block;
+            background: url(http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/ico3.png) no-repeat 0px;
+            background-size: 8%;
         }
         .local .local_top h2 span {
-        color: #707070;
+            color: #707070;
         }
         .local .local_top .case_icon {
-        background: url(http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/ico3.png) no-repeat 0px;
-        background-size: 8%;
+            background: url(http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/ico3.png) no-repeat 0px;
+            background-size: 8%;
         }
         .local .local_top .h23 {
-        background: url(http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/icn4.png) no-repeat 0px;
-        background-size: 7%;
+            background: url(http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/icn4.png) no-repeat 0px;
+            background-size: 7%;
         }
         .local .local_top a {
-        display: block;
-        width: 30%;
-        text-align: right;
-        font-size: 1.2rem;
-        font-size:15px;
-        color: #666666;
-        margin-top: 2px;
+            display: block;
+            width: 30%;
+            text-align: right;
+            font-size: 1.2rem;
+            font-size:15px;
+            color: #666666;
+            margin-top: 2px;
         }
         .local .news_geqin {
-        width: 100%;
-        overflow: hidden;
+            width: 100%;
+            overflow: hidden;
         }
         .local .news_geqin .news_top {
-        width: 100%;
-        position: relative;
-        margin-bottom: 10px;
+            width: 100%;
+            /* position: relative; */
+            margin-bottom: 15px;
         }
         .local .news_geqin .news_top .n_img {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        overflow: hidden;
-        height: 200px;
+            width: 100%;
+            /* display: flex; */
+            /* align-items: center; */
+            overflow: hidden;
+            height: 380px;
         }
         .local .news_geqin .news_top .n_img a{
             display: inline-block;
@@ -153,113 +155,129 @@ export default {
             box-sizing: border-box;
         }
         .local .news_geqin .news_top .n_img img {
-        width: 100%;
+            /* width: 100%; */
+            position: absolute;
+            top:0;
+            overflow: hidden;
         }
         .local .news_geqin .news_top .title_box {
-        width: 100%;
-        height: 30px;
-        background: url(http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/title_bj.png) no-repeat;
-        background-size: 100%;
-        position: absolute;
-        bottom: -1px;
-        display: flex;
-        justify-content: space-between;
+            width: 100%;
+            height: 60px;
+            background: url(http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/title_bj.png) no-repeat;
+            background-size: 100%;
+            position: absolute;
+            bottom: -12px;
+            display: flex;
+            justify-content: space-between;
+            
         }
         .local .news_geqin .news_top .title_box h2 {
-        padding-left: 5px;
-        width: 75%;
-        text-align: center;
-        line-height: 30px;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 1;
-        overflow: hidden;
+            padding-left: 5px;
+            width: 75%;
+            text-align: center;
+            line-height: 60px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            overflow: hidden;
+            font-weight: 700;
         }
         .local .news_geqin .news_top .title_box h2 a{
-        color: #FFFFFF;
-        font-size: 1.3rem;
-        font-size:13px;
-        display: inline-block;
+            color: #FFFFFF;
+            font-size: 1.3rem;
+            font-size:13px;
+            display: inline-block;
         }
         .local .news_geqin .news_top .title_box span {
-        font-size: 1.3rem;
-        font-size:13px;
-        color: #FFFFFF;
-        text-align: center;
-        line-height: 30px;
-        display: block;
-        padding-right: 5px;
+            font-size: 1.3rem;
+            font-size:13px;
+            color: #FFFFFF;
+            text-align: center;
+            line-height: 60px;
+            display: block;
+            padding-right: 10px;
         }
         .local .news_geqin .news_li {
-        width: 94%;
-        margin: 0px auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px 0px;
-        border-bottom: 1px solid #cccccc;
-        display: flex;
-        align-items: center;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            position: relative;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0px;
+            border-bottom: 1px solid #cccccc;
+            display: flex;
+            align-items: center;
+            background: #f8f8f8;
         }
         .local .news_geqin .news_li .news_liLeft {
-        width: 40%;
-        overflow: hidden;
+            width: 40%;
+            overflow: hidden;
         }
         .local .news_geqin .news_li .news_liLeft .n_img {
-        width: 100%;
-        height: 100px;
-        overflow: hidden;
+            width: 90%;
+            height:180px;
+            /* border:5px solid #000; */
+            margin-left: 5%;
+            overflow: hidden;
         }
         .local .news_geqin .news_li .news_liLeft .n_img a{
             display: inline-block;
             height: 100px;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
+            overflow:visible;
+            display: flex;
+            align-items: center;
         }
         .local .news_geqin .news_li .news_liLeft .n_img img {
-        width: 100%;
+            width: 100%;
+            margin-top:100px;
         }
         .local .news_geqin .news_li .news_liRight {
-        width: 56%;
-        display: flex;
-        align-content: space-between;
-        flex-wrap: wrap;
+            width: 55%;
+            margin: 0 auto;
+            display: flex;
+            margin-top:15px;
+            align-content: space-between;
+            flex-wrap: wrap;
+            /* border: 1px solid red; */
         }
         .local .news_geqin .news_li .news_liRight h2 {
-        margin-top: -3px;
-        width: 100%;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 1;
-        overflow: hidden;
+            width: 100%;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            /* overflow: hidden; */
+            padding: 13px 0 13px 0;
+            font-weight: 700;
         }
         .local .news_geqin .news_li .news_liRight h2 a{
-        font-size: 1.4rem;
-        font-size: 14px;
-        display: block;
+            font-size: 1.4rem;
+            font-size: 14px;
+            display: block;
             color: #333333;
         }
         .local .news_geqin .news_li .news_liRight p {
-        font-size: 1.2rem;
-        font-size:12px;
-        margin: 3px 0px;
-        color: #666666;
+            font-size: 1.2rem;
+            font-size:12px;
+            line-height: 38px;
+            margin: 3px 0px;
+            color: #666666;
         }
-        .local .news_geqin .news_li .news_liRight p a {
+        .local .news_geqin .news_li .news_liRight  a {
         color: #2b5ca9;
+
         }
         .local .news_geqin .news_li .news_liRight span {
-        display: block;
-        font-size: 1.2rem;
-        font-size: 12px;
-        color: #666666;
-        padding-left: 13px;
-        background: url(http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/ico5.png) no-repeat 0px;
-        background-size: 8%;
+            display: block;
+            font-size: 1.2rem;
+            font-size: 12px;
+            color: #666666;
+            padding-left: 30px;
+            background: url(http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/ico5.png) no-repeat 0px;
+            background-size: 8%;
         }
         .local .news_geqin .news_li .news_liR p {
-        margin: 10px 0px;
+        margin: 12px 0px;
         }
         .local .news_geqin .case_li .news_liRight p {
         margin: 5px 0px;

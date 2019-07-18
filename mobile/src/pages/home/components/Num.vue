@@ -41,7 +41,7 @@ let html1 = document.getElementsByTagName('html')[0]
     }
     .head_num .num_box {
         width: 100%;
-        margin: 0px auto;
+        margin: 3px auto;
     }
     .head_num .num_box .box_top {
         width: 100%;
@@ -57,6 +57,7 @@ let html1 = document.getElementsByTagName('html')[0]
         width: 25%;
         text-align: center;
         font-weight: 700;
+        
     }
 
     .head_num .num_box .box_bottom {
@@ -66,5 +67,6 @@ let html1 = document.getElementsByTagName('html')[0]
     .box_bottom span {
         font-size: 0.2rem;
         font-weight: 700;
+        margin-top: 5px;
     }
 </style>

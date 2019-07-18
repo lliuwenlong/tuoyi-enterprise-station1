@@ -41,17 +41,25 @@
 				    </div>
 				</div>
 			</li>
-			<li class="shijie">
+            <div v-for="item of newLists" :key="item.id">
+                <li class="shijie">
+                    <p>
+                        <a :href="item.aHerf">{{item.txt}}</a>
+                    </p>
+                    <span>{{item.time}}</span>
+                </li>
+            </div>
+			<!-- <li class="shijie">
                 <p>
                     <a href="/mgmtNews/1870.html?wxref=mp.weixin.qq.com">瑞幸咖啡完成1.5亿美元B+轮融资...</a>
-                        </p>
-                            <span>2019-04-18</span>
+                </p>
+                    <span>2019-04-18</span>
             </li>
             <li class="shijie">
                 <p>
                     <a href="/mgmtNews/1797.html?wxref=mp.weixin.qq.com">《裂变式增长》口碑裂变 -- 三只...</a>
-                    </p>
-                    <span>2019-02-25</span>
+                </p>
+                <span>2019-02-25</span>
             </li>
             <li class="shijie">
                 <p>
@@ -76,7 +84,7 @@
                     <a href="/mgmtNews/1675.html?wxref=mp.weixin.qq.com">品牌定位：茅台啤酒为什么失败？</a>
                 </p>
                 <span>2018-11-26</span>
-            </li>		
+            </li>		 -->
         </ul>
 	</section>
 
@@ -84,124 +92,150 @@
 
 <script>
 export default {    
-    name:'HomeListManage'
+    name:'HomeListManage',
+    data() {
+        return {
+            newLists: [{
+                id: '0',
+                aHref: '/mgmtNews/1711.html?wxref=mp.weixin.qq.com',
+                txt: '品牌定位：茅台啤酒为什么失败？',
+                time: '2018-11-26'
+            },{
+                id: '1',
+                aHref: '/mgmtNews/1711.html?wxref=mp.weixin.qq.com',
+                txt: '品牌定位：茅台啤酒为什么失败？',
+                time: '2018-11-26'
+            },{
+                id: '2',
+                aHref: '/mgmtNews/1711.html?wxref=mp.weixin.qq.com',
+                txt: '品牌定位：茅台啤酒为什么失败？',
+                time: '2018-11-26'
+            },{
+                id: '3',
+                aHref: '/mgmtNews/1711.html?wxref=mp.weixin.qq.com',
+                txt: '品牌定位：茅台啤酒为什么失败？',
+                time: '2018-11-26'
+            }]
+        }
+    }
 }
 </script>
 
 <style scoped>
     .local .local_top {
-    width: 94%;
-    margin: 0px auto;
-    padding-bottom: 8px;
-    display: flex;
-    justify-content: space-between;
+        width: 94%;
+        margin: 5px auto;
+        padding-bottom: 8px;
+        display: flex;
+        justify-content: space-between;
     }
     .local .local_top h2 {
-    padding-left: 20px;
-    font-size: 1.5rem;
-    font-size: 15px;
-    color: #017dcc;
-    display: block;
-    background: url(http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/icn4.png) no-repeat 0px;
-    background-size: 8%;
+        padding-left: 33px;
+        font-size: 1.5rem;
+        font-size: 15px;
+        color: #017dcc;
+        display: block;
+        background: url(http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/icn4.png) no-repeat 0px;
+        background-size: 8%;
     }
     .local .local_top h2 span {
-    color: #707070;
+        color: #707070;
     }
     .local .local_top .case_icon {
-    background: url(http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/ico3.png) no-repeat 0px;
-    background-size: 8%;
+        background: url(http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/ico3.png) no-repeat 0px;
+        background-size: 8%;
     }
     .local .local_top .h23 {
-    background: url(http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/icn4.png) no-repeat 0px;
-    background-size: 7%;
+        background: url(http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/icn4.png) no-repeat 0px;
+        background-size: 7%;
+        font-size: .35rem;
     }
     .local .local_top a {
-    display: block;
-    width: 30%;
-    text-align: right;
-    font-size: 1.2rem;
-    font-size: 12px;
-    color: #666666;
-    margin-top: 2px;
+        display: block;
+        width: 30%;
+        text-align: right;
+        font-size: 1.2rem;
+        font-size: 12px;
+        color: #666666;
+        margin-top: 2px;
     }
     .local .news_geqin {
-    width: 100%;
-    overflow: hidden;
+        width: 100%;
+        overflow: hidden;
     }
-
-
-
     .local .news_geqin .case_li .news_liRight p {
         margin: 5px 0px;
-        }
-        .local .case_list {
+    }
+    .local .case_list {
         width: 94%;
         margin: 10px auto;
         margin-top: 0px;
-        }
-        .local .case_list li:first-child {
+    }
+    .local .case_list li:first-child {
         width: 100%;
         display: flex;
         justify-content: space-between;
         margin-bottom: 8px;
-        }
-        .local .case_list li:first-child .li_img {
+    }
+    .local .case_list li:first-child .li_img {
         width: 45%;
         display: flex;
         align-items: center;
-        }
-        .local .case_list li:first-child .li_img img {
+    }
+    .local .case_list li:first-child .li_img img {
         width: 100%;
-        }
-        .local .case_list li:first-child .li_right {
+    }
+    .local .case_list li:first-child .li_right {
         width: 52%;
         display: flex;
         align-content: space-between;
         flex-wrap: wrap;
-        }
-        .local .case_list li:first-child .li_right h2 {
+        margin-top:13px;
+    }
+    .local .case_list li:first-child .li_right h2 {
         width: 100%;
-        margin-bottom: 2px;
+        padding:8px 0 0 0;
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 1;
         overflow: hidden;
-        }
-        .local .case_list li:first-child .li_right h2 a {
+        font-weight: 700;
+    }
+    .local .case_list li:first-child .li_right h2 a {
         color: #333333;
         font-size: 1.4rem;
         font-size: 14px;
-        }
-        .local .case_list li:first-child .li_right .top {
+    }
+    .local .case_list li:first-child .li_right .top {
         display: block;
         font-size: 1.2rem;
         font-size: 12px;
         color: #333333;
         line-height: 1.4em;
-        line-height: 12px;
-        }
-        .local .case_list li:first-child .li_right .top a {
+        line-height: 35px;
+    }
+    .local .case_list li:first-child .li_right .top a {
         color: #549efb;
         font-size: 1.2rem;
         font-size: 12px;
-        }
-        .local .case_list li:first-child .li_right .time {
-        margin-top: 3px;
-        padding-left: 15px;
+    }
+    .local .case_list li:first-child .li_right .time {
+        /* margin-top: 3px; */
+        padding-left: 32px;
         font-size: 1.2rem;
         font-size: 12px;
         background: url(http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/ico5.png) no-repeat 0px;
         background-size: 9%;
         color: #333333;
-        }
-        .local .case_list .meiti {
+    }
+    .local .case_list .meiti {
         width: 100%;
         display: flex;
         justify-content: space-between;
         margin-bottom: 10px;
-        }
-        .local .case_list .meiti span {
+        overflow: hidden;
+    }
+    .local .case_list .meiti span {
         display: inline-block;
         font-size: 1.3rem;
         font-size: 13px;
@@ -210,77 +244,78 @@ export default {
         color: #FFFFFF;
         text-align: center;
         line-height: 1.2em;
-        }
-        .local .case_list .meiti .list-meiti {
+    }
+    .local .case_list .meiti .list-meiti {
         width: 83%;
         overflow: hidden;
-        }
-        .local .case_list .meiti .list-meiti .swiper-slide {
+    }
+    .local .case_list .meiti .list-meiti .swiper-slide {
         width: 25% !important;
         margin-right: 10px !important;
-        }
-        .local .case_list .meiti .list-meiti .swiper-slide a{
-            display: inline-block;
-        }
-        .local .case_list .meiti .list-meiti .swiper-slide img {
+    }
+    .local .case_list .meiti .list-meiti .swiper-slide a{
+        display: inline-block;
+    }
+    .local .case_list .meiti .list-meiti .swiper-slide img {
         width: 100%;
         display: block;
         margin-top: 5px;
-        }
-        .local .case_list .first {
+    }
+    .local .case_list .first {
         border-bottom: 1px solid #cccccc;
         padding-bottom: 5px;
-        }
-        .local .case_list .c-li {
+    }
+    .local .case_list .c-li {
         width: 31.5%;
         overflow: hidden;
         float: left;
         margin-top: 8px;
-        }
-        .local .case_list .c-li .li_img {
+    }
+    .local .case_list .c-li .li_img {
         width: 100%;
         overflow: hidden;
-        }
-        .local .case_list .c-li .li_img img {
+    }
+    .local .case_list .c-li .li_img img {
         width: 100%;
-        }
-        .local .case_list .c-li p {
+    }
+    .local .case_list .c-li p {
         text-align: center;
         font-size: 1rem;
         font-size: 10px;
-        }
-        .local .case_list .shijie {
+    }
+    .local .case_list .shijie {
         width: 100%;
-        padding: 6px 0px;
+        line-height: 46px;
+        padding: 8px 0px 20px 0;
         display: flex;
         justify-content: space-between;
         border-top: 1px solid #CCCCCC;
-        }
-        .local .case_list .shijie p {
+    }
+    .local .case_list .shijie p {
         font-size: 1.3rem;
         font-size: 13px;
-        }
-        .local .case_list .shijie p a {
+    }
+    .local .case_list .shijie p a {
         color: #333333;
-        }
-        .local .case_list .shijie span {
+    }
+    .local .case_list .shijie span {
         display: block;
         color: #2b5ca9;
         font-size: 1.3rem;
         font-size: 13px;
-        }
-        .local .case_list .shijie:last-child {
-        padding-bottom: 0px;
-        }
-        .local .c-list {
+    }
+    .local .case_list .shijie:last-child {
+        margin-bottom: -20px;
+    }
+    .local .c-list {
         display: flex;
         justify-content: space-between;
         flex-flow: wrap;
-        }
-        .local .lrqd {
+    }
+    .local .lrqd {
         width: 100%;
-        }
-        .local .lrqd img {
+    }
+    .local .lrqd img {
         width: 100%;
     }
 </style>

@@ -11,7 +11,7 @@
                         <h3>格勤介绍</h3>
                         <span></span>
                     </div>
-                    <p>GEQIN INTRODUCE</p>
+                    <p style="margin:5px">GEQIN INTRODUCE</p>
                 </div>
                 <p class="pany">格勤教育是一家专注于企业运营系统建设的咨询服务公司，总部设于北京；公司始终贯彻“一切以企业增长结果为导向”的课程理念，专注于为客户构建一整套可持续增长的运营系统解决方案，协助企业赢得商战，成为行业第一。</p>
                 <!--<div style="font-weight: bold;padding-top: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;旗下子品牌</div>-->
@@ -42,7 +42,7 @@
                         <h3>格勤文化</h3>
                         <span></span>
                     </div>
-                    <p>GEQIN CULTURE</p>
+                    <p style="margin:5px">GEQIN CULTURE</p>
                 </div>
                 <div class="cultureList">
                     <div class="swiper-container " :options="swiperOption">
@@ -62,7 +62,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
+                            <!-- <div class="swiper-slide">
                                 <div class="cul">
                                     <div class="cTitle">
                                         <h2>定位</h2>
@@ -148,7 +148,7 @@
                                         <p>突破极限 <br/>向不可能挑战</p>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             
                         </div>
                         <!-- 如果需要分页器 -->
@@ -164,91 +164,20 @@
                             <h3>格勤课程</h3>
                             <span></span>
                         </div>
-                        <p>GEQIN CURRICULUM</p>
+                        <p style="margin-top:5px">GEQIN CURRICULUM</p>
                     </div>
                     <div class="cultureList curriculumList">
-                        <div class="cul">
-                            <div class="cTitle">
-                                <h2>裂变式增长</h2>
-                                <span>profit motivated</span>
-                            </div>
-                            <span class="xian"></span>
-                            <div class="cont">
-                                <p>成为第一的<br>商业逻辑</p>
-                            </div>
-                        </div>
-                        <div class="cul">
-                            <div class="cTitle">
-                                <h2>运营系统班</h2>
-                                <span>Operation system class</span>
-                            </div>
-                            <span class="xian"></span>
-                            <div class="cont">
-                                <p>从战略到<br>运营配称的<br>持续发展系统</p>
-                            </div>
-                        </div>
-                        <div class="cul">
-                            <div class="cTitle">
-                                <h2>系统运营官</h2>
-                                <span>System operation officer</span>
-                            </div>
-                            <span class="xian"></span>
-                            <div class="cont">
-                                <p>打造激活组织<br>系统核心圈</p>
-                            </div>
-                        </div>
                         
-                        <div class="cul">
+                        <div class="cul" v-for="item of cultureLists" :key="item.id">
                             <div class="cTitle">
-                                <h2>二梯队孵化</h2>
-                                <span>Two echelon incubation</span>
+                                <h2>{{item.title}}</h2>
+                                <span class="cTitleEn">{{item.titleEn}}</span>
                             </div>
                             <span class="xian"></span>
                             <div class="cont">
-                                <p>团队生长 <br>企业重生</p>
+                                <p>{{item.txt}}</p>
                             </div>
                         </div>
-                        <div class="cul">
-                            <div class="cTitle">
-                                <h2>股权战略</h2>
-                                <span>The strength of equity</span>
-                            </div>
-                            <span class="xian"></span>
-                            <div class="cont">
-                                <p>打造内部上市 <br>体系构建持股 <br>平台</p>
-                            </div>
-                        </div>
-                        <!--<div class="cul">
-                            <div class="cTitle">
-                                <h2>少帅导师班</h2>
-                                <span>Junior coach class</span>
-                            </div>
-                            <span class="xian"></span>
-                            <div class="cont">
-                                <p>打造少帅联盟 <br>传承百年企业</p>
-                            </div>
-                        </div>
-                        <div class="cul">
-                            <div class="cTitle">
-                                <h2>互董会</h2>
-                                <span>Board of directors </span>
-                            </div>
-                            <span class="xian"></span>
-                            <div class="cont">
-                                <p>打造最强老板<br>大脑助力企业<br>价值倍增 </p>
-                            </div>
-                        </div>-->
-                        <div class="cul">
-                            <div class="cTitle">
-                                <h2>勤商会</h2>
-                                <span>Business organization</span>
-                            </div>
-                            <span class="xian"></span>
-                            <div class="cont">
-                                <p>打造全球第一 <br>大商邦构建商<br>界共同体 </p>
-                            </div>
-                        </div>
-                        <!--<div class="cul" style="background: none;"></div>-->
                     </div>
                     
                 </section>
@@ -261,7 +190,7 @@
                             <h3>格勤荣誉</h3>
                             <span></span>
                         </div>
-                        <p>GEQIN HONOR</p>
+                        <p style="margin-top:5px">GEQIN HONOR</p>
                     </div>
                     <ul class="honor">
                         <li>
@@ -298,7 +227,7 @@
                             <h3>公司专利</h3>
                             <span></span>
                         </div>
-                        <p>Corporate patents</p>
+                        <p style="margin-top:5px">Corporate patents</p>
                     </div>
                     <ul class="honor">
                         <li>
@@ -333,40 +262,52 @@
                             <h3>出版物</h3>
                             <span></span>
                         </div>
-                        <p>GEQIN PUBLICATIONS</p>
+                        <p style="margin-top: 5px">GEQIN PUBLICATIONS</p>
                     </div>
                     <ul class="books">
+                        <!-- <li v-for="item of books" :key="item.id">
+                            <div class="img"><a :href="aHref"><img :src="item.imgUrl"/></a></div>
+                            <div class="book_right">
+                                <h2><a :href="ahHref">{{item.title}}</a></h2>
+                                <p>{{item.datails}}<a :href="itrm.aHref">{{itrm.more}}</a></p>
+                            </div>
+                        </li> -->
                         <li>
-                                <div class="img"><a href="/books/950.html"><img src="http://m.igeqin.com/Upload/1510626801.jpg"/></a></div>
-                                <div class="book_right">
-                                    <h2><a href="/books/950.html">系统运营之积分管理</a></h2>
-                                    <p>企业运营管理的目的是为了达到“三效”，既效率、效益、效果，到达到这“三效”，必须激发员工的“三性”，...<a href="/books/950.html">了解更多</a></p>
-                                </div>
-                            </li><li>
-                                <div class="img"><a href="/books/949.html"><img src="http://m.igeqin.com/Upload/1510626784.jpg"/></a></div>
-                                <div class="book_right">
-                                    <h2><a href="/books/949.html">利润驱动光盘</a></h2>
-                                    <p>利润事企业的灵魂，想要获得利润首先要从“四面”入手，既：利润驱动、成本管控、类金融手段、人才驱动，并...<a href="/books/949.html">了解更多</a></p>
-                                </div>
-                            </li><li>
-                                <div class="img"><a href="/books/825.html"><img src="http://m.igeqin.com/Upload/1510626198.jpg"/></a></div>
-                                <div class="book_right">
-                                    <h2><a href="/books/825.html">股权的力量</a></h2>
-                                    <p>         中国已经进入股权时代，这是历史给的大好时机。已经有越来越多的人认识到了股权的价值，...<a href="/books/825.html">了解更多</a></p>
-                                </div>
-                            </li><li>
-                                <div class="img"><a href="/books/364.html"><img src="http://m.igeqin.com/Upload/1510626855.jpg"/></a></div>
-                                <div class="book_right">
-                                    <h2><a href="/books/364.html">系统运营官</a></h2>
-                                    <p>先做榜样，再做管理  、 指哪打哪儿 、头顶着天，脸贴着地   、 德需配位  、  熬得住  、提...<a href="/books/364.html">了解更多</a></p>
-                                </div>
-                            </li><li>
-                                <div class="img"><a href="/books/359.html"><img src="http://m.igeqin.com/Upload/1510626185.jpg"/></a></div>
-                                <div class="book_right">
-                                    <h2><a href="/books/359.html">积分管理</a></h2>
-                                    <p>积分制管理是建立在绩效考核的基础上，对员工的个人能力、工作业绩、日常行为等用奖励或扣分的方式进行全方...<a href="http://m.igeqin.com/books/359.html">了解更多</a></p>
-                                </div>
-                            </li>			</ul>
+                            <div class="img"><a href="/books/950.html"><img src="http://m.igeqin.com/Upload/1510626801.jpg"/></a></div>
+                            <div class="book_right">
+                                <h2><a href="/books/950.html">系统运营之积分管理</a></h2>
+                                <p>企业运营管理的目的是为了达到“三效”，既效率、效益、效果，到达到这“三效”，必须激发员工的“三性”，...<a href="/books/950.html">了解更多</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="img"><a href="/books/949.html"><img src="http://m.igeqin.com/Upload/1510626784.jpg"/></a></div>
+                            <div class="book_right">
+                                <h2><a href="/books/949.html">利润驱动光盘</a></h2>
+                                <p>利润事企业的灵魂，想要获得利润首先要从“四面”入手，既：利润驱动、成本管控、类金融手段、人才驱动，并...<a href="/books/949.html">了解更多</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="img"><a href="/books/825.html"><img src="http://m.igeqin.com/Upload/1510626198.jpg"/></a></div>
+                            <div class="book_right">
+                                <h2><a href="/books/825.html">股权的力量</a></h2>
+                                <p>         中国已经进入股权时代，这是历史给的大好时机。已经有越来越多的人认识到了股权的价值，...<a href="/books/825.html">了解更多</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="img"><a href="/books/364.html"><img src="http://m.igeqin.com/Upload/1510626855.jpg"/></a></div>
+                            <div class="book_right">
+                                <h2><a href="/books/364.html">系统运营官</a></h2>
+                                <p>先做榜样，再做管理  、 指哪打哪儿 、头顶着天，脸贴着地   、 德需配位  、  熬得住  、提...<a href="/books/364.html">了解更多</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="img"><a href="/books/359.html"><img src="http://m.igeqin.com/Upload/1510626185.jpg"/></a></div>
+                            <div class="book_right">
+                                <h2><a href="/books/359.html">积分管理</a></h2>
+                                <p>积分制管理是建立在绩效考核的基础上，对员工的个人能力、工作业绩、日常行为等用奖励或扣分的方式进行全方...<a href="http://m.igeqin.com/books/359.html">了解更多</a></p>
+                            </div>
+                        </li>			
+                    </ul>
                 </section>
             </div>
     </div>
@@ -378,6 +319,10 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 // 轮播图未完成
 export default {
+    components: {
+        swiper,
+        swiperSlide
+    },
     name:'IntroduceContent',
     data() {
         return {
@@ -394,48 +339,122 @@ export default {
             },
 
             Texts: [{
-                id:'0001',
-                titleText:'定位',
-                titleEn:'POSITIONING',
-                titleCont:'企业运营系统',
-                titleBr:'建设领先者'
-            },{
-                id:'0002',
-                titleText:'企业愿景',
-                titleEn:'ENTERPRISEVISION',
-                titleCont:'打造商业平台',
-                titleBr:'用教育孵化产业'
-            },{
-                id:'0003',
-                titleText:'使命',
-                titleEn:'MISSION',
-                titleCont:'帮助企业提升管理成熟度，为中国成为世界第一经济强国而奋斗终身!',
-                titleBr:''
-            },{
-                id:'0004',
-                titleText:'价值观',
-                titleEn:'SENSE OF WORTH',
-                titleCont:'客户第一 团队合作',
-                titleBr:'敢于担当 持续成长'
-            },{
-                id:'0005',
-                titleText:'核心价值',
-                titleEn:'CORE VALUE',
-                titleCont:'实战 系统 超值',
-                titleBr:'我是转折点'
-            },{
-                id:'0006',
-                titleText:'经营理念',
-                titleEn:'CONCEPT',
-                titleCont:'敬畏规律 真爱企业',
-                titleBr:''
-            },{
-                id:'0007',
-                titleText:'企业信念',
-                titleEn:'ENTERPRISE BELIEF',
-                titleCont:'突破极限',
-                titleBr:'向不可能挑战'
-            }]
+                    id:'0001',
+                    titleText:'定位',
+                    titleEn:'POSITIONING',
+                    titleCont:'企业运营系统',
+                    titleBr:'建设领先者'
+                },{
+                    id:'0002',
+                    titleText:'企业愿景',
+                    titleEn:'ENTERPRISEVISION',
+                    titleCont:'打造商业平台',
+                    titleBr:'用教育孵化产业'
+                },{
+                    id:'0003',
+                    titleText:'使命',
+                    titleEn:'MISSION',
+                    titleCont:'帮助企业提升管理成熟度，为中国成为世界第一经济强国而奋斗终身!',
+                    titleBr:''
+                },{
+                    id:'0004',
+                    titleText:'价值观',
+                    titleEn:'SENSE OF WORTH',
+                    titleCont:'客户第一 团队合作',
+                    titleBr:'敢于担当 持续成长'
+                },{
+                    id:'0005',
+                    titleText:'核心价值',
+                    titleEn:'CORE VALUE',
+                    titleCont:'实战 系统 超值',
+                    titleBr:'我是转折点'
+                },{
+                    id:'0006',
+                    titleText:'经营理念',
+                    titleEn:'CONCEPT',
+                    titleCont:'敬畏规律 真爱企业',
+                    titleBr:''
+                },{
+                    id:'0007',
+                    titleText:'企业信念',
+                    titleEn:'ENTERPRISE BELIEF',
+                    titleCont:'突破极限',
+                    titleBr:'向不可能挑战'
+            }],
+            cultureLists: [{
+                    id: '0',
+                    title: '裂变式增长',
+                    titleEn: 'profit motivated',
+                    txt: '成为第一的商业逻辑'
+                },{
+                    id: '1',
+                    title: '运营系统班',
+                    titleEn: 'profit motivated',
+                    txt: '成为第一的商业逻辑'
+                },{
+                    id: '2',
+                    title: '裂变式增长',
+                    titleEn: 'profit motivated',
+                    txt: '成为第一的商业逻辑'
+                },{
+                    id: '3',
+                    title: '裂变式增长',
+                    titleEn: 'profit motivated',
+                    txt: '成为第一的商业逻辑'
+                },{
+                    id: '4',
+                    title: '裂变式增长',
+                    titleEn: 'profit motivated',
+                    txt: '成为第一的商业逻辑'
+                },{
+                    id: '5',
+                    title: '裂变式增长',
+                    titleEn: 'profit motivated',
+                    txt: '成为第一的商业逻辑'
+            }],
+            books: [{
+                    id: '0',
+                    aHref: '/books/950.html',
+                    imgUrl: 'http://m.igeqin.com/Upload/1510626801.jpg',
+                    title: '裂变式增长',
+                    datails: '成为第一的商业逻辑',
+                    more: '了解更多'
+                },{
+                    id: '1',
+                    aHref: '/books/950.html',
+                    imgUrl: 'http://m.igeqin.com/Upload/1510626801.jpg',
+                    title: '裂变式增长',
+                    datails: '成为第一的商业逻辑',
+                    more: '了解更多'
+                },{
+                    id: '2',
+                    aHref: '/books/950.html',
+                    imgUrl: 'http://m.igeqin.com/Upload/1510626801.jpg',
+                    title: '裂变式增长',
+                    datails: '成为第一的商业逻辑',
+                    more: '了解更多'
+                },{
+                    id: '3',
+                    aHref: '/books/950.html',
+                    imgUrl: 'http://m.igeqin.com/Upload/1510626801.jpg',
+                    title: '裂变式增长',
+                    datails: '成为第一的商业逻辑',
+                    more: '了解更多'
+                },{
+                    id: '4',
+                    aHref: '/books/950.html',
+                    imgUrl: 'http://m.igeqin.com/Upload/1510626801.jpg',
+                    title: '裂变式增长',
+                    datails: '成为第一的商业逻辑',
+                    more: '了解更多'
+                },{
+                    id: '5',
+                    aHref: '/books/950.html',
+                    imgUrl: 'http://m.igeqin.com/Upload/1510626801.jpg',
+                    title: '裂变式增长',
+                    datails: '成为第一的商业逻辑',
+                    more: '了解更多'
+            }],
         }
     }
 }
@@ -446,15 +465,14 @@ export default {
 
     .swiper-slide{
         width:50%;
+        height: 50%;
         /* 根据内容调整宽度 */
     }
-
-
-
-    #banner {
+    /* #banner {
         width: 100%;
         overflow: hidden;
-    }
+    } */
+    
     #banner img {
         width: 100% !important;
     }
@@ -462,46 +480,47 @@ export default {
         width: 100%;
         text-align: center;
     }
-        .about_title .pro {
+    .about_title .pro {
         width: auto;
         display: flex;
         justify-content: center;
         align-items: center;
-        }
-        .about_title .pro h3 {
+    }
+    .about_title .pro h3 {
         color: #1680cc;
-        font-size: 1.8rem;
-        font-size: 18px;
+        font-size: .5rem;
+        /* font-size: 18px; */
         padding: 0px 3%;
         letter-spacing: 2px;
         font-weight: 700;
-        }
-        .about_title .pro span {
+        width: 30%;
+    }
+    .about_title .pro span {
         display: block;
         width: 12%;
-        height: 1px;
+        height: 2px;
         background: #666666;
-        }
-        .about_title p {
+    }
+    .about_title p {
         width: 100%;
         color: #666666;
         font-size: 1rem;
         font-size: 10px;
         text-transform: uppercase;
-        }
-        #Company_introduction {
+     }
+    #Company_introduction {
         width: 100%;
         position: relative;
         top: -30px;
-        }
-        #Company_introduction .introduction {
+    }
+    #Company_introduction .introduction {
         width: 94%;
         overflow: hidden;
         padding: 3%;
         background: #FFFFFF;
         margin-bottom: 15px;
-        }
-        #Company_introduction .introduction .pany {
+    }
+    #Company_introduction .introduction .pany {
         padding-top: 15px;
         width: 96%;
         display: block;
@@ -510,17 +529,18 @@ export default {
         text-indent: 2em;
         font-size: 1.2rem;
         font-size: 12px;
-        }
-        #Company_introduction .introduction .zhexian {
+    }
+    #Company_introduction .introduction .zhexian {
         width: 94%;
         margin: 0px auto;
         margin-top: -10px;
         position: absolute;
-        }
-        #Company_introduction .introduction .zhexian img {
+        margin-bottom: 5%;
+    }
+    #Company_introduction .introduction .zhexian img {
         width: 100%;
-        }
-        #Company_introduction .introduction .honor {
+    }
+    #Company_introduction .introduction .honor {
         width: 100%;
         margin: 0px auto;
         overflow: hidden;
@@ -528,67 +548,67 @@ export default {
         justify-content: space-between;
         flex-flow: wrap;
         margin-top: 20px;
-        }
-        #Company_introduction .introduction .honor li {
+    }
+    #Company_introduction .introduction .honor li {
         width: 48%;
         margin-bottom: 10px;
-        }
-        #Company_introduction .introduction .honor li .img {
+    }
+    #Company_introduction .introduction .honor li .img {
         width: 96%;
         margin: 0px auto;
         padding: 2%;
         padding-bottom: 0.5%;
         border: 1px solid #1680cc;
         box-sizing: border-box;
-        }
-        #Company_introduction .introduction .honor li .img img {
+    }
+    #Company_introduction .introduction .honor li .img img {
         width: 100%;
-        }
-        #Company_introduction .introduction .honor li p {
+    }
+    #Company_introduction .introduction .honor li p {
         font-size: 1.2rem;
         font-size: 12px;
         color: #666666;
         text-align: center;
         line-height: 2em;
-        }
-        #Company_introduction .introduction .books {
+    }
+    #Company_introduction .introduction .books {
         width: 100%;
         overflow: hidden;
         padding-top: 10px;
-        }
-        #Company_introduction .introduction .books li {
+    }
+    #Company_introduction .introduction .books li {
         width: 96%;
         padding: 3% 2%;
         display: flex;
         justify-content: space-between;
-        }
-        #Company_introduction .introduction .books li .img {
+    }
+    #Company_introduction .introduction .books li .img {
         width: 30%;
-        }
-        #Company_introduction .introduction .books li .img img {
+    }
+    #Company_introduction .introduction .books li .img img {
         width: 100%;
-        }
-        #Company_introduction .introduction .books li .book_right {
+    }
+    #Company_introduction .introduction .books li .book_right {
         width: 65%;
-        }
-        #Company_introduction .introduction .books li .book_right h2 {
+    }
+    #Company_introduction .introduction .books li .book_right h2 {
         font-size: 1.6rem;
         font-size: 16px;
         line-height: 2em;
         color: #666666;
-        }
-        #Company_introduction .introduction .books li .book_right p {
+    }
+    #Company_introduction .introduction .books li .book_right p {
         font-size: 1.2rem;
         font-size: 12px;
         line-height: 1.5em;
         color: #666666;
-        }
-        #Company_introduction .introduction .books li .book_right p a {
+    }
+    #Company_introduction .introduction .books li .book_right p a {
         color: #1680cc;
         font-size: 1.2rem;
         font-size: 12px;
-        }
-        #Company_introduction .intro {
+    }
+    #Company_introduction .intro {
         width: 90%;
         padding: 2%;
         border-radius: 6px;
@@ -597,97 +617,104 @@ export default {
         overflow: initial;
         padding-bottom: 40px;
         /* background: #eee; */
-        }
-        #Company_introduction .culture {
+    }
+    #Company_introduction .culture {
         overflow: hidden;
         width: 100%;
         width: 94%;
-        margin: 15px auto;
-        margin-top: 50px;
+        margin: 17% auto;
+        /* margin-top: 50px; */
         position: relative;
-        top: -5px !important;
+        
+
         /* background: #eee; */
-        }
-        #Company_introduction .culture .cultureList {
+    }
+    #Company_introduction .culture .cultureList {
         width: 94%;
         margin: 0px auto;
         margin-top: 15px;
-        }
-        #Company_introduction .culture .cultureList .swiper-container {
+    }
+    #Company_introduction .culture .cultureList .swiper-container {
         padding-bottom: 30px;
-        }
-        #Company_introduction .culture .cultureList .cul {
+    }
+    #Company_introduction .culture .cultureList .cul {
         width: 140px;
         height: 195px;
         background: url(http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/culBJ.png) no-repeat;
         background-size: 100%;
         overflow: hidden;
-        }
-        #Company_introduction .culture .cultureList .cul .cTitle {
+    }
+    #Company_introduction .culture .cultureList .cul .cTitle {
         width: 80%;
         margin-top: 25px;
         margin-left: 15px;
-        }
-        #Company_introduction .culture .cultureList .cul .cTitle h2 {
+    }
+    #Company_introduction .culture .cultureList .cul .cTitle h2 {
         font-size: 1.6rem;
         font-size: 16px;
         color: #282828;
-        }
-        #Company_introduction .culture .cultureList .cul .cTitle span {
+    }
+    #Company_introduction .culture .cultureList .cul .cTitle span {
         font-size: 0.7rem;
         font-size: 7px;
         color: #afaeae;
-        }
-        #Company_introduction .culture .cultureList .cul .xian {
+    }
+    #Company_introduction .culture .cultureList .cul .xian {
         display: block;
         width: 70%;
         margin-left: 15px;
         border-top: 1px solid #e0dfec;
         margin-top: 15px;
-        }
-        #Company_introduction .culture .cultureList .cul .cont {
+    }
+    #Company_introduction .culture .cultureList .cul .cont {
         width: 80%;
         margin-left: 15px;
         margin-top: 15px;
         color: #666666;
         font-size: 1.3rem;
         font-size: 13px;
-        }
-        #Company_introduction .culture .cultureList .swiper-pagination {
+    }
+    #Company_introduction .culture .cultureList .swiper-pagination {
         bottom: 5px;
-        }
-        #Company_introduction .culture .curriculumList {
+    }
+    #Company_introduction .culture .curriculumList {
         width: 100%;
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
-        }
-        #Company_introduction .culture .curriculumList .cul {
-        background: #FFFFFF url(http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/se.png) no-repeat 90px 125px;
-        width: 105px;
-        height: 140px;
+        
+    }
+    #Company_introduction .culture .curriculumList .cul {
+        background: #FFFFFF url(http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/se.png) no-repeat 170px 200px;
+        width: 30%;
+        height: 280px;
         margin-bottom: 10px;
         position: relative;
-        }
-        #Company_introduction .culture .curriculumList .cul .cTitle {
-        margin-top: 10px;
-        margin-left: 10px;
-        }
-        #Company_introduction .culture .curriculumList .cul .cTitle span {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+       
+    }
+    #Company_introduction .culture .curriculumList .cul .cTitle {
+        margin: 20px 0 0 10px;
+    }
+    #Company_introduction .culture .curriculumList .cul .cTitle span {
         text-transform: uppercase;
-        }
-        #Company_introduction .culture .curriculumList .cul .xian {
+        display: inline-block;
+        margin:40px 0 0 0;  
+    }
+    #Company_introduction .culture .curriculumList .cul .xian {
         width: 80%;
         position: absolute;
-        left: -5px;
-        top: 48px;
-        }
-        #Company_introduction .culture .curriculumList .cul .cont {
+        top:50px;
+        left: -10px;
+    }
+    #Company_introduction .culture .curriculumList .cul .cont {
         position: absolute;
-        top: 55px;
+        line-height: 30px;
+        top: 120px;
         left: -5px;
-        }
-        #Company_introduction .curriculum {
+    }
+    #Company_introduction .curriculum {
         margin-top: 30px;
     }
 </style>

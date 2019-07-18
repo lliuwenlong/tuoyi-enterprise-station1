@@ -6,6 +6,7 @@
                 v-for="item of navList" 
                 :key='item.id'
                 :to='item.linkUrl'
+                :herf ='item.aHerf'
             >
                 {{item.navText }}
             </router-link>
@@ -51,70 +52,70 @@ export default {
     data() {
         return {
             navList: [{
-                id:'0001',
-                imgUrl:'http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/nav1.png',
-                navText:'首页',
-                linkUrl:'/'
-            },{
-                id:'0002',
-                imgUrl:'http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/nav1.png',
-                navText:'格勤介绍',
-                linkUrl:'/Introduce'
-            },{
-                id:'0003',
-                imgUrl:'http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/nav2.png',
-                navText:'裂变式增长',
-                linkUrl:'/Increase'
-            },{
-                id:'0004',
-                imgUrl:'http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/nav4.png',
-                navText:'到答课堂',
-                linkUrl:'/Class'
-            },{
-                id:"0005",
-                imgUrl:'http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/nav5.png',
-                navText:'师资力量',
-                linkUrl:'/Teachers'
-            },{
-                id:"0006",
-                imgUrl:'http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/nav9.png',
-                navText:'客户案例',
-                linkUrl:'/Case'
-            },{
-                id:"0007",
-                imgUrl:'http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/nav7.png',
-                navText:'渠道加盟',
-                linkUrl:'/Viewpoint'
-            },{
-                id:"0008",
-                imgUrl:'http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/nav7.png',
-                navText:'格勤观点',
-                linkUrl:'/Viewpoint'
+                    id:'0001',
+                    imgUrl:'http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/nav1.png',
+                    navText:'首页',
+                    linkUrl:'/'
+                },{
+                    id:'0002',
+                    imgUrl:'http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/nav1.png',
+                    navText:'格勤介绍',
+                    linkUrl:'/Introduce'
+                },{
+                    id:'0003',
+                    imgUrl:'http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/nav2.png',
+                    navText:'裂变式增长',
+                    linkUrl:'/Increase'
+                },{
+                    id:'0004',
+                    imgUrl:'http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/nav4.png',
+                    navText:'到答课堂',
+                    linkUrl:'/Class'
+                },{
+                    id:"0005",
+                    imgUrl:'http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/nav5.png',
+                    navText:'师资力量',
+                    linkUrl:'/Teachers'
+                },{
+                    id:"0006",
+                    imgUrl:'http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/nav9.png',
+                    navText:'客户案例',
+                    linkUrl:'/Case'
+                },{
+                    id:"0007",
+                    imgUrl:'http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/nav7.png',
+                    navText:'渠道加盟',
+                    linkUrl:'/Viewpoint'
+                },{
+                    id:"0008",
+                    imgUrl:'http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/nav7.png',
+                    navText:'格勤观点',
+                    linkUrl:'/Viewpoint'
             }],
             btmNav:[{
-                id:'00001',
-                imgUrl:'http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/ico6s.png',
-                navText:'首页',
-                linkUrl:'/',
-                aHerf:''
-            },{
-                id:'00003',
-                imgUrl:'http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/ico7s.png',
-                navText:'裂变式增长',
-                linkUrl:'/Increase',
-                aHerf:''
-            },{
-                id:'00004',
-                imgUrl:'http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/ico8s.png',
-                navText:'到答课堂',
-                linkUrl:'/Class',
-                aHerf:''
-            },{
-                id:'00000',
-                imgUrl:'http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/ico9s.png',
-                navText:'到答课堂',
-                linkUrl:'/Class',
-                aHerf:'tel:4008880319'
+                    id:'00001',
+                    imgUrl:'http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/ico6.png',
+                    navText:'首页',
+                    linkUrl:'/',
+                    aHerf:'/'
+                },{
+                    id:'00003',
+                    imgUrl:'http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/ico7.png',
+                    navText:'裂变式增长',
+                    linkUrl:'/Increase',
+                    aHerf:'/Increase'
+                },{
+                    id:'00004',
+                    imgUrl:'http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/ico8.png',
+                    navText:'到答课堂',
+                    linkUrl:'/Class',
+                    aHerf:'/Class'
+                },{
+                    id:'00000',
+                    imgUrl:'http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/ico9.png',
+                    navText:'到答课堂',
+                    linkUrl:'tel:4008880319',
+                    aHerf:'tel:4008880319'
             }]
         }
     }
@@ -124,8 +125,8 @@ export default {
 
 <style scoped>
     .bottom_nav {
-        width: 94%;
-        padding: 2% 3%;
+        width: 100%;
+        padding: 3% 0;
         color: #FFFFFF;
         background: #535353;
         display: flex;
@@ -136,13 +137,14 @@ export default {
     .bottom_nav a {
         color: #FFFFFF;
         font-size: 12px;
-        line-height: 18px;
+        line-height: 20px;
         display: block;
         width: 24%;
         text-align: center;
 
         border-left: 2px solid #FFF;
-        margin-bottom: 3px;
+        margin-bottom: 10px;
+        margin-top: 10px;
     }
     .bottom_nav a:nth-child(1),.bottom_nav a:nth-child(5){
         border: 0 none;
@@ -155,6 +157,7 @@ export default {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin-bottom: 60px;
     }
     .wrapper .wrapper_left {
         width: 25%;
@@ -187,24 +190,27 @@ export default {
         bottom: 0px;
         box-shadow: 0px 0px 5px #999999;
         z-index: 66;
+        height: 110px;
     }
     #footer nav a {
         display: block;
         width: 25%;
         text-align: center;
         font-size: 7.5px;
-        color: white;
+        /* color: white; */
         margin: 0px;
         padding: 0px;
         float: left;
-        padding: 5px 0px;
-        height: 50px;
+        padding: 15px 0px;
+        height: 40px;
+        /* border: 1px solid #000; */
     }
     #footer nav a .nac-img {
         width: 100%;
-        height: 20px;
+        height: 50px;
+        margin-bottom:12px;
     }
-        #footer nav a .nac-img img {
+    #footer nav a .nac-img img {
         width: 30%;
         margin: 0px auto;
         display: block;
@@ -213,6 +219,11 @@ export default {
         color: #999999;
         line-height: 15px;
         font-size: 15px;
+    }
+    .router-link-exact-active{
+        /* background-color: aqua; */
+        font-weight: 900;
+         text-shadow: -1px -1px 1px #ccc, 1px 1px 1px #fff;
     }
 </style>
 
