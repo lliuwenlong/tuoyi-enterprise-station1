@@ -5,19 +5,10 @@
                 src="http://www.igeqin.com/App/Tpl/Home/Defaults/Public/images/images2//banner_03.jpg"
             />
         </div>
-
         <div class="company">
             <!--公共左侧-->
             <div class="empty"></div>
-            <div class="common_wapr">
-                <dl class="public_nav">
-                    <dt>TEAM</dt>
-                    <dd>
-                        <a href="team-wxref=mp.weixin.qq.com.html">精英团队</a>
-                    </dd>
-                </dl>
-            </div>
-
+            <Menu type="CASE" :list="list" @itemClick="itemClick"/>
             <div class="section_box" id="company_box">
                 <div class="about_title wow fadeInDown" data-wow-delay="0.2s">
                     <p>ELITE TEAM</p>
@@ -182,24 +173,39 @@
                         </div>
                     </li>
                 </ul>
-                <div id="page_s">
-                    <span class="pageinfo">
-                        共
-                        <label id="total">31</label>条 1/4 页
-                    </span>
-                    <span class="pagefirst">首页</span>
-                    <span class="pageup">上一页</span>
-                    <span class="current">1</span>
-                    <a class="pagenum" href="team-&amp;p=2.html">&nbsp;2&nbsp;</a>
-                    <a class="pagenum" href="team-&amp;p=3.html">&nbsp;3&nbsp;</a>
-                    <a class="pagenum" href="team-&amp;p=4.html">&nbsp;4&nbsp;</a>
-                    <a class="pagedown" href="team-&amp;p=2.html">下一页</a>
-                    <a class="pageend" href="team-&amp;p=4.html">尾页</a>
-                </div>
+                <Page :total="100" />
             </div>
         </div>
     </div>
 </template>
+<script>
+import Menu from "@/components/common/Menu.vue";
+import { WOW } from "wowjs";
+import Page from "@/components/common/Page.vue";
+export default {
+    components: {
+        Menu,
+        Page
+    },
+    mounted () {
+        new WOW().init();
+    },
+    data() {
+        return {
+            list: [
+                { id: 1, name: "精英团队" }
+            ],
+            typeName: '精英团队'
+        };
+    },
+    methods: {
+        itemClick (item) {
+            this.typeName = item.name;
+        }
+    }
+};
+</script>
+
 <style lang="less" scoped>
 .banner_img {
     width: 100%;
@@ -211,34 +217,34 @@
     margin: 0px auto;
 }
 .about_title {
-  width: 50%;
-  height: 60px;
-  margin: 30px auto;
+    width: 50%;
+    height: 60px;
+    margin: 30px auto;
 }
 .about_title p {
-  font-size: 30px !important;
-  color: #666666 !important;
-  text-align: center;
-  font-weight: 400;
+    font-size: 30px !important;
+    color: #666666 !important;
+    text-align: center;
+    font-weight: 400;
 }
 .about_title .pro {
-  width: 220px;
-  height: 30px;
-  margin: 0px auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    width: 220px;
+    height: 30px;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .about_title .pro span {
-  display: block;
-  width: 50px;
-  height: 1px;
-  background: #9d9d9d;
+    display: block;
+    width: 50px;
+    height: 1px;
+    background: #9d9d9d;
 }
 .about_title .pro h3 {
-  font-size: 24px;
-  color: #333333;
-  line-height: 30px;
+    font-size: 24px;
+    color: #333333;
+    line-height: 30px;
 }
 .company {
     width: 1200px;
@@ -447,34 +453,5 @@
     font-size: 16px;
     color: #ffffff;
     margin-top: 15px;
-}
-#page_s {
-	width: 1000px;
-	height: 40px;
-	text-align: center;
-	margin-bottom: 40px;
-}
-#page_s a:first-child{
-	border: 0px;
-}
-#page_s span {
-	padding: 5px 10px;
-	border: 1px solid #ddd;
-	color: #999;
-}
-
-#page_s a {
-	padding: 5px 10px;
-	border: 1px solid #ddd;
-	color: #666;
-}
-
-#page_s .current {
-	background: #0071c3;
-	color: #fff;
-}
-
-#page_s .pageinfo {
-	display: none;
 }
 </style>

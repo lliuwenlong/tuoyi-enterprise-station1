@@ -38,42 +38,42 @@ export default {
             navList: [{
                 id:'0001',
                 imgUrl:'http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/nav1.png',
-                navText:'格勤介绍',
+                navText:'拓亿介绍',
                 linkUrl:'/Introduce'
             },{
                 id:'0002',
                 imgUrl:'http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/nav3.png',
-                navText:'格勤课程',
+                navText:'拓亿产品',
                 linkUrl:'/Course'
             },{
                 id:'0003',
                 imgUrl:'http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/nav2.png',
-                navText:'裂变式增长',
+                navText:'利润增长',
                 linkUrl:'/Increase'
             },{
                 id:'0004',
                 imgUrl:'http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/nav4.png',
-                navText:'到答课堂',
+                navText:'拓亿云',
                 linkUrl:'/Class'
             },{
                 id:"0005",
                 imgUrl:'http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/nav5.png',
-                navText:'师资力量',
+                navText:'权威师资',
                 linkUrl:'/Teachers'
             },{
                 id:"0006",
                 imgUrl:'http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/nav9.png',
-                navText:'客户案例',
+                navText:'标杆企业',
                 linkUrl:'/Case'
             },{
                 id:"0007",
                 imgUrl:'http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/nav7.png',
-                navText:'格勤观点',
+                navText:'拓亿智慧',
                 linkUrl:'/Viewpoint'
             },{
                 id:"0008",
                 imgUrl:'http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/nav6.png',
-                navText:'格勤课表',
+                navText:'线下课表',
                 linkUrl:'/Timetable'
             }]
         }

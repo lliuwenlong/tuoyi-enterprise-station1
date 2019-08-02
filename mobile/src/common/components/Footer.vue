@@ -59,7 +59,7 @@ export default {
                 },{
                     id:'0002',
                     imgUrl:'http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/nav1.png',
-                    navText:'格勤介绍',
+                    navText:'拓亿介绍',
                     linkUrl:'/Introduce'
                 },{
                     id:'0003',
@@ -101,19 +101,19 @@ export default {
                 },{
                     id:'00003',
                     imgUrl:'http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/ico7.png',
-                    navText:'裂变式增长',
+                    navText:'企业赋能',
                     linkUrl:'/Increase',
                     aHerf:'/Increase'
                 },{
                     id:'00004',
                     imgUrl:'http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/ico8.png',
-                    navText:'到答课堂',
+                    navText:'线上平台',
                     linkUrl:'/Class',
                     aHerf:'/Class'
                 },{
                     id:'00000',
                     imgUrl:'http://m.igeqin.com/App/Tpl/Wap/Defaults/Public/images/images/ico9.png',
-                    navText:'到答课堂',
+                    navText:'立即咨询',
                     linkUrl:'tel:4008880319',
                     aHerf:'tel:4008880319'
             }]
